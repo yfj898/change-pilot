@@ -13,7 +13,7 @@ export type ApiKeyCapabilityGroup = {
 }
 
 export const TENANT_API_KEY_CAPABILITIES: TenantAPIKeyCapability[] = [
-  'retrieve', 'chat', 'read_agents', 'ingest', 'manage_kbs',
+  'retrieve', 'chat', 'read_agents', 'read_changes', 'ingest', 'manage_kbs',
   'message_history', 'manage_agents', 'manage_mcp_services',
   'manage_datasources', 'manage_models', 'manage_vector_stores',
   'manage_storage_backends', 'manage_web_search', 'manage_channels',
@@ -32,6 +32,7 @@ export const DEFAULT_TENANT_API_KEY_CAPABILITIES = new Set<TenantAPIKeyCapabilit
 ])
 
 export const KB_SCOPED_API_KEY_CAPABILITIES = new Set<TenantAPIKeyCapability>([
+	'read_changes',
   'retrieve', 'chat', 'ingest', 'manage_kbs', 'manage_agents', 'manage_datasources',
 ])
 
@@ -51,6 +52,7 @@ export const TENANT_API_KEY_CAPABILITY_GROUPS: ApiKeyCapabilityGroup[] = [
     key: 'automation',
     labelKey: 'integrations.api.apiKeyCapabilityGroupAutomation',
     capabilities: [
+      { value: 'read_changes', labelKey: 'changes.readCapability', hintKey: 'changes.readCapabilityHint' },
       { value: 'read_agents', labelKey: 'integrations.api.capabilityReadAgents', hintKey: 'integrations.api.capabilityReadAgentsHint' },
       { value: 'manage_agents', labelKey: 'integrations.api.capabilityManageAgents', hintKey: 'integrations.api.capabilityManageAgentsHint' },
       { value: 'manage_mcp_services', labelKey: 'integrations.api.capabilityManageMcpServices', hintKey: 'integrations.api.capabilityManageMcpServicesHint' },

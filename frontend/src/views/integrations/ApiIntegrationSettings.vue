@@ -869,6 +869,7 @@ function keyCapabilityLabels(key: TenantAPIKey): string[] {
     retrieve: t('integrations.api.capabilityRetrieve'),
     chat: t('integrations.api.capabilityChat'),
     read_agents: t('integrations.api.capabilityReadAgents'),
+    read_changes: t('changes.readCapability'),
     ingest: t('integrations.api.capabilityIngest'),
     manage_kbs: t('integrations.api.capabilityManageKbs'),
     manage_agents: t('integrations.api.capabilityManageAgents'),

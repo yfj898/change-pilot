@@ -24,6 +24,9 @@ func TestDefaultMCPEndpointToolsExcludesDestructive(t *testing.T) {
 		if def.Destructive {
 			t.Fatalf("default tool %q must not be destructive", name)
 		}
+		if def.Group == MCPEndpointToolGroupChanges {
+			t.Fatalf("change tools require explicit opt-in: %s", name)
+		}
 	}
 	if _, ok := LookupMCPEndpointTool(MCPEndpointToolDeleteDocument); !ok {
 		t.Fatal("delete_document must be in the catalog")
@@ -41,6 +44,7 @@ func TestMCPEndpointCapabilitiesForTools(t *testing.T) {
 		{"ask", []string{MCPEndpointToolAsk}, []string{"retrieve", "chat", "read_agents"}},
 		{"ingest", []string{MCPEndpointToolAddDocument}, []string{"ingest"}},
 		{"none", nil, []string{}},
+		{"changes", []string{MCPEndpointToolGetChangeContext, MCPEndpointToolGetVerificationRun}, []string{"read_changes"}},
 	}
 	for _, tc := range cases {
 		if got := MCPEndpointCapabilitiesForTools(tc.tools); !reflect.DeepEqual(got, tc.want) {

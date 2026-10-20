@@ -32,6 +32,8 @@ type RouterParams struct {
 	dig.In
 
 	Config                       *config.Config
+	ChangeHandler                *handler.ChangeHandler `optional:"true"`
+	ChangeService                *service.ChangeService `optional:"true"`
 	FileService                  interfaces.FileService
 	UserService                  interfaces.UserService
 	KBService                    interfaces.KnowledgeBaseService
@@ -191,6 +193,9 @@ func NewRouter(params RouterParams) *gin.Engine {
 
 	// Workspace MCP server surface (/mcp/:endpoint_id): bearer-token auth per
 	// endpoint, so it must precede the global Auth middleware.
+	if params.MCPServer != nil && params.ChangeService != nil {
+		params.MCPServer.BindChanges(params.ChangeService)
+	}
 	RegisterMCPServerRoutes(r, params.MCPServer, params.MCPEndpointService, params.TenantService)
 
 	// Short-lived capability URLs for IM and other clients that cannot attach
@@ -260,6 +265,7 @@ func NewRouter(params RouterParams) *gin.Engine {
 		v1.Use(rbacGuards.apiKeyAuthorizer.Middleware())
 
 		RegisterAuthRoutes(v1, params.AuthHandler, rbacGuards)
+		RegisterChangeRoutes(v1, params.ChangeHandler, rbacGuards)
 		RegisterTenantRoutes(v1, params.TenantHandler, params.TenantMemberHandler, params.TenantInvitationHandler, params.AuditLogHandler, rbacGuards)
 		RegisterMyInvitationRoutes(v1, params.TenantInvitationHandler)
 		RegisterKnowledgeBaseRoutes(v1, params.KBHandler, rbacGuards)

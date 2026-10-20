@@ -12,6 +12,11 @@ CLI history before v0.3 is recorded in the project root
 
 ## [Unreleased]
 
+### Added - change workspace extension
+- `changes context <change-id>` and `changes runs get <change-id> <run-id>`
+  read versioned context and existing verification facts using the standard
+  envelope, authentication, and error channels. They do not submit or retry work.
+
 ### Breaking
 - `chat` and `session ask` now distinguish JSON from NDJSON: the default
   `--format json` buffers a bounded answer-event projection into one

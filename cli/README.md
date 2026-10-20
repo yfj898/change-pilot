@@ -14,6 +14,7 @@ Available Commands:
   agent       Manage custom agents (CRUD + status/check)
   api         Make a raw API request to the WeKnora server
   auth        Manage authentication credentials and profiles
+  changes     Read change context and existing verification facts
   chat        Ask a streaming RAG question against a knowledge base
   chunk       Manage document chunks (RAG retrieval debug)
   completion  Generate the autocompletion script for the specified shell

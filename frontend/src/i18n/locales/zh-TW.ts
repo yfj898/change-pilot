@@ -1,4 +1,7 @@
+import { changeWorkspaceZH } from '../changeWorkspace'
+
 export default {
+  changes: changeWorkspaceZH,
   modelCatalog: {
     "title": "模型目錄",
     "description": "模型目錄決定新增模型時可選的模型清單，以及脈絡視窗、是否支持思考等預設參數。在這裡修改後，所有空間立即生效。",
@@ -867,12 +870,18 @@ export default {
       selectGroup: '全選',
       toolsRequired: '至少勾選一個工具',
       groups: {
+        changes: '研发变更（显式授权）',
         retrieve: '檢索與閱讀',
         chat: '問答',
         wiki: 'Wiki',
         ingest: '寫入（謹慎開啟）',
       },
       tools: {
+        get_change_context: '读取变更上下文',
+        get_change_contextDesc: '读取版本化依据和快照，不修改或提交任务',
+        get_verification_run: '读取验证报告',
+        get_verification_runDesc: '读取既有执行的版本、逐项结果与错误',
+
         list_knowledge_bases: '列出知識庫',
         list_knowledge_basesDesc: '返回端點範圍內的知識庫及其支持的檢索方式',
         search_knowledge: '語義搜尋',

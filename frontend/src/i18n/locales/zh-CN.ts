@@ -1,4 +1,7 @@
+import { changeWorkspaceZH } from '../changeWorkspace'
+
 export default {
+  changes: changeWorkspaceZH,
   modelCatalog: {
     "title": "模型目录",
     "description": "模型目录决定添加模型时可选的模型列表，以及上下文窗口、是否支持思考等默认参数。在这里修改后，所有空间立即生效。",
@@ -867,12 +870,18 @@ export default {
       selectGroup: '全选',
       toolsRequired: '至少勾选一个工具',
       groups: {
+        changes: '研发变更（显式授权）',
         retrieve: '检索与阅读',
         chat: '问答',
         wiki: 'Wiki',
         ingest: '写入（谨慎开启）',
       },
       tools: {
+        get_change_context: '读取变更上下文',
+        get_change_contextDesc: '读取版本化依据和快照，不修改或提交任务',
+        get_verification_run: '读取验证报告',
+        get_verification_runDesc: '读取既有执行的版本、逐项结果与错误',
+
         list_knowledge_bases: '列出知识库',
         list_knowledge_basesDesc: '返回端点范围内的知识库及其支持的检索方式',
         search_knowledge: '语义搜索',

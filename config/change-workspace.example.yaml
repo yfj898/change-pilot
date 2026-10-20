@@ -1,0 +1,31 @@
+# Merge this additive section into config/config.yaml. Paths and workspace ID
+# are operator-maintained. No command or credential is accepted from requests.
+change_workspace:
+  enabled: true
+  taskflow_endpoint: http://127.0.0.1:18089
+  taskflow_token_env: TASKFLOW_ACCESS_TOKEN
+  projects:
+    - id: change-workspace-demo
+      name: Change Workspace Demo
+      tenant_id: 1
+      repository_path: /srv/source/change-workspace-demo
+      business_pack_id: catalog-presale
+      business_pack_revision: 1.0.0
+      check_profile_id: verify-change
+      check_profile_revision: "1"
+      check_ids: [backend-test, frontend-test, frontend-build]
+      required_reference_paths:
+        - docs/catalog/1.0.0/rules.md
+        - docs/api/1.0.0/openapi.yaml
+    - id: change-workspace-demo
+      name: Change Workspace Demo
+      tenant_id: 1
+      repository_path: /srv/source/change-workspace-demo
+      business_pack_id: saas-ticket-priority
+      business_pack_revision: 1.0.0
+      check_profile_id: verify-change
+      check_profile_revision: "1"
+      check_ids: [backend-test, frontend-test, frontend-build]
+      required_reference_paths:
+        - docs/tickets/1.0.0/rules.md
+        - docs/api/1.0.0/openapi.yaml

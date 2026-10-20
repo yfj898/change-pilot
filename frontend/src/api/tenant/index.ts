@@ -70,6 +70,7 @@ export type TenantAPIKeyCapability =
   | 'retrieve'
   | 'chat'
   | 'read_agents'
+  | 'read_changes'
   | 'ingest'
   | 'manage_kbs'
   | 'manage_agents'

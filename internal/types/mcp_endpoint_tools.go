@@ -13,6 +13,7 @@ const (
 	MCPEndpointToolGroupChat     MCPEndpointToolGroup = "chat"
 	MCPEndpointToolGroupWiki     MCPEndpointToolGroup = "wiki"
 	MCPEndpointToolGroupIngest   MCPEndpointToolGroup = "ingest"
+	MCPEndpointToolGroupChanges  MCPEndpointToolGroup = "changes"
 )
 
 // MCP endpoint tool names. These are the names external MCP clients see.
@@ -31,6 +32,8 @@ const (
 	MCPEndpointToolAddDocument        = "add_document"
 	MCPEndpointToolUpdateDocument     = "update_document"
 	MCPEndpointToolDeleteDocument     = "delete_document"
+	MCPEndpointToolGetChangeContext   = "get_change_context"
+	MCPEndpointToolGetVerificationRun = "get_verification_run"
 )
 
 // MCPEndpointToolDefinition is the settings-facing description of one tool.
@@ -46,6 +49,8 @@ type MCPEndpointToolDefinition struct {
 
 // mcpEndpointToolCatalog is the ordered catalog. Order is the display order.
 var mcpEndpointToolCatalog = []MCPEndpointToolDefinition{
+	{Name: MCPEndpointToolGetChangeContext, Group: MCPEndpointToolGroupChanges},
+	{Name: MCPEndpointToolGetVerificationRun, Group: MCPEndpointToolGroupChanges},
 	{Name: MCPEndpointToolListKnowledgeBases, Group: MCPEndpointToolGroupRetrieve},
 	{Name: MCPEndpointToolSearchKnowledge, Group: MCPEndpointToolGroupRetrieve},
 	{Name: MCPEndpointToolGrepChunks, Group: MCPEndpointToolGroupRetrieve},
@@ -74,6 +79,7 @@ func MCPEndpointToolGroups() []MCPEndpointToolGroup {
 		MCPEndpointToolGroupChat,
 		MCPEndpointToolGroupWiki,
 		MCPEndpointToolGroupIngest,
+		MCPEndpointToolGroupChanges,
 	}
 }
 
@@ -82,7 +88,7 @@ func MCPEndpointToolGroups() []MCPEndpointToolGroup {
 func DefaultMCPEndpointTools() []string {
 	out := make([]string, 0, len(mcpEndpointToolCatalog))
 	for _, def := range mcpEndpointToolCatalog {
-		if !def.Destructive {
+		if !def.Destructive && def.Group != MCPEndpointToolGroupChanges {
 			out = append(out, def.Name)
 		}
 	}
@@ -130,6 +136,9 @@ func MCPEndpointCapabilitiesForTools(tools []string) []string {
 		}
 	}
 	caps := []string{}
+	if groups[MCPEndpointToolGroupChanges] {
+		caps = append(caps, string(APIKeyCapabilityReadChanges))
+	}
 	if groups[MCPEndpointToolGroupRetrieve] || groups[MCPEndpointToolGroupWiki] || groups[MCPEndpointToolGroupChat] {
 		caps = append(caps, string(APIKeyCapabilityRetrieve))
 	}

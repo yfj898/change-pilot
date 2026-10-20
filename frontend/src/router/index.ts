@@ -99,6 +99,26 @@ const router = createRouter({
       meta: { requiresInit: true, requiresAuth: true },
       children: [
         {
+          path: 'changes', name: 'changeList',
+          component: () => import('../views/changes/ChangeList.vue'),
+          meta: { requiresInit: true, requiresAuth: true },
+        },
+        {
+          path: 'changes/:id', name: 'changeEditor',
+          component: () => import('../views/changes/ChangeEditor.vue'),
+          meta: { requiresInit: true, requiresAuth: true },
+        },
+        {
+          path: 'changes/:id/context', name: 'changeContext',
+          component: () => import('../views/changes/ChangeContext.vue'),
+          meta: { requiresInit: true, requiresAuth: true },
+        },
+        {
+          path: 'changes/:id/verification', name: 'changeVerification',
+          component: () => import('../views/changes/ChangeVerification.vue'),
+          meta: { requiresInit: true, requiresAuth: true },
+        },
+        {
           path: "tenant",
           redirect: "/platform/settings"
         },

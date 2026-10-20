@@ -1,4 +1,7 @@
+import { changeWorkspaceEN } from '../changeWorkspace'
+
 export default {
+  changes: changeWorkspaceEN,
   modelCatalog: {
     "title": "Model catalog",
     "description": "The model catalog defines which models are offered when adding a model, along with defaults such as context window and reasoning support. Changes here apply to all workspaces immediately.",
@@ -7780,12 +7783,18 @@ export default {
       selectGroup: 'Select all',
       toolsRequired: 'Select at least one tool',
       groups: {
+        changes: 'Changes (explicit access)',
         retrieve: 'Retrieval & reading',
         chat: 'Question answering',
         wiki: 'Wiki',
         ingest: 'Writes (enable with care)',
       },
       tools: {
+        get_change_context: 'Read change context',
+        get_change_contextDesc: 'Read versioned evidence and snapshots; no writes or task submissions',
+        get_verification_run: 'Read verification run',
+        get_verification_runDesc: 'Read an existing run with exact versions, check results and errors',
+
         list_knowledge_bases: 'List knowledge bases',
         list_knowledge_basesDesc: 'Return the knowledge bases in scope and the retrieval modes each supports',
         search_knowledge: 'Semantic search',

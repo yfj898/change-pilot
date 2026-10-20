@@ -1,4 +1,7 @@
+import { changeWorkspaceEN } from '../changeWorkspace'
+
 export default {
+  changes: changeWorkspaceEN,
   modelCatalog: {
     "title": "Каталог моделей",
     "description": "Каталог моделей определяет, какие модели предлагаются при добавлении модели, и значения по умолчанию, например контекстное окно и поддержку рассуждений. Изменения здесь сразу применяются ко всем рабочим пространствам.",
@@ -867,12 +870,18 @@ export default {
       selectGroup: 'Выбрать все',
       toolsRequired: 'Выберите хотя бы один инструмент',
       groups: {
+        changes: 'Changes (explicit access)',
         retrieve: 'Поиск и чтение',
         chat: 'Вопросы и ответы',
         wiki: 'Wiki',
         ingest: 'Запись (включайте осторожно)',
       },
       tools: {
+        get_change_context: 'Read change context',
+        get_change_contextDesc: 'Read versioned evidence and snapshots; no writes or task submissions',
+        get_verification_run: 'Read verification run',
+        get_verification_runDesc: 'Read an existing run with exact versions, check results and errors',
+
         list_knowledge_bases: 'Список баз знаний',
         list_knowledge_basesDesc: 'Возвращает базы знаний в области и поддерживаемые режимы поиска',
         search_knowledge: 'Семантический поиск',

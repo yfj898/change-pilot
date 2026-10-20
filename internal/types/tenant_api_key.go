@@ -73,6 +73,9 @@ func (TenantAPIKey) TableName() string {
 type APIKeyCapability string
 
 const (
+	// APIKeyCapabilityReadChanges grants additive read access to change contexts and reports.
+	APIKeyCapabilityReadChanges APIKeyCapability = "read_changes"
+
 	// APIKeyCapabilityRetrieve lets a key read and search knowledge-base data
 	// within its allowed KB scope without granting chat or content writes.
 	APIKeyCapabilityRetrieve APIKeyCapability = "retrieve"
@@ -168,6 +171,8 @@ const (
 // capability, returning "" for anything unrecognised so callers can drop it.
 func NormalizeAPIKeyCapability(c APIKeyCapability) APIKeyCapability {
 	switch APIKeyCapability(strings.ToLower(strings.TrimSpace(string(c)))) {
+	case APIKeyCapabilityReadChanges:
+		return APIKeyCapabilityReadChanges
 	case APIKeyCapabilityRetrieve:
 		return APIKeyCapabilityRetrieve
 	case APIKeyCapabilityChat:

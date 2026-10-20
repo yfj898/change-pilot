@@ -1,4 +1,7 @@
+import { changeWorkspaceEN } from '../changeWorkspace'
+
 export default {
+  changes: changeWorkspaceEN,
   modelCatalog: {
     "title": "모델 카탈로그",
     "description": "모델 카탈로그는 모델 추가 시 선택할 수 있는 모델 목록과 컨텍스트 창, 추론 지원 여부 같은 기본값을 정의합니다. 여기서 변경하면 모든 워크스페이스에 즉시 적용됩니다.",
@@ -867,12 +870,18 @@ export default {
       selectGroup: '모두 선택',
       toolsRequired: '도구를 하나 이상 선택하세요',
       groups: {
+        changes: 'Changes (explicit access)',
         retrieve: '검색 및 읽기',
         chat: '질의응답',
         wiki: 'Wiki',
         ingest: '쓰기 (신중하게 활성화)',
       },
       tools: {
+        get_change_context: 'Read change context',
+        get_change_contextDesc: 'Read versioned evidence and snapshots; no writes or task submissions',
+        get_verification_run: 'Read verification run',
+        get_verification_runDesc: 'Read an existing run with exact versions, check results and errors',
+
         list_knowledge_bases: '지식 베이스 목록',
         list_knowledge_basesDesc: '범위 내 지식 베이스와 지원하는 검색 방식을 반환합니다',
         search_knowledge: '의미 검색',

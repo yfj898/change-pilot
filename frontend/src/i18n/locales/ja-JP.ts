@@ -1,4 +1,7 @@
+import { changeWorkspaceEN } from '../changeWorkspace'
+
 export default {
+  changes: changeWorkspaceEN,
   modelCatalog: {
     "title": "モデルカタログ",
     "description": "モデルカタログは、モデル追加時に選べるモデル一覧と、コンテキスト長や思考対応などの既定値を定義します。ここでの変更はすべてのワークスペースに即時反映されます。",
@@ -7780,12 +7783,18 @@ export default {
       selectGroup: 'すべて選択',
       toolsRequired: '少なくとも 1 つのツールを選択してください',
       groups: {
+        changes: 'Changes (explicit access)',
         retrieve: '検索と閲覧',
         chat: '質問応答',
         wiki: 'Wiki',
         ingest: '書き込み（慎重に有効化）',
       },
       tools: {
+        get_change_context: 'Read change context',
+        get_change_contextDesc: 'Read versioned evidence and snapshots; no writes or task submissions',
+        get_verification_run: 'Read verification run',
+        get_verification_runDesc: 'Read an existing run with exact versions, check results and errors',
+
         list_knowledge_bases: 'ナレッジベース一覧',
         list_knowledge_basesDesc: '範囲内のナレッジベースと対応する検索方式を返します',
         search_knowledge: 'セマンティック検索',

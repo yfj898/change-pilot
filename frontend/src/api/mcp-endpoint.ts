@@ -1,6 +1,6 @@
 import { get, post, put, del } from '@/utils/request'
 
-export type McpEndpointToolGroup = 'retrieve' | 'chat' | 'wiki' | 'ingest'
+export type McpEndpointToolGroup = 'retrieve' | 'chat' | 'wiki' | 'ingest' | 'changes'
 
 export interface McpEndpoint {
   id: string

@@ -18,6 +18,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Tencent/WeKnora/internal/application/service"
 	"github.com/Tencent/WeKnora/internal/config"
 	"github.com/Tencent/WeKnora/internal/logger"
 	"github.com/Tencent/WeKnora/internal/ratelimit"
@@ -42,6 +43,7 @@ var errNoEndpoint = errors.New("mcp endpoint missing from request context")
 // Server wires the tool catalog onto an mcp-go server and exposes it as an
 // http.Handler.
 type Server struct {
+	changes          *service.ChangeService
 	kbService        interfaces.KnowledgeBaseService
 	knowledgeService interfaces.KnowledgeService
 	chunkService     interfaces.ChunkService
@@ -206,6 +208,8 @@ func (s *Server) touchLastUsed(ctx context.Context, endpointID string) {
 // catalog so tools/list is stable.
 func (s *Server) toolCatalog() []server.ServerTool {
 	return []server.ServerTool{
+		{Tool: changeContextTool(), Handler: s.handleChangeContext},
+		{Tool: verificationRunTool(), Handler: s.handleVerificationRun},
 		{Tool: listKnowledgeBasesTool(), Handler: s.handleListKnowledgeBases},
 		{Tool: searchKnowledgeTool(), Handler: s.handleSearchKnowledge},
 		{Tool: grepChunksTool(), Handler: s.handleGrepChunks},
