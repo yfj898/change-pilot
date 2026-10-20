@@ -1401,7 +1401,7 @@ const resizeSidebar = (delta: number, keyboard: boolean) => {
             }
 
             :deep(.brand-mark__name) {
-                font-size: 16px;
+                font-size: var(--app-text-xl);
             }
         }
 

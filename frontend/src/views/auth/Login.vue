@@ -1087,7 +1087,7 @@ onMounted(async () => {
 
   h2 {
     margin: 0 0 6px;
-    font-size: 18px;
+    font-size: var(--app-text-2xl);
     font-weight: 600;
   }
 
@@ -1100,7 +1100,7 @@ onMounted(async () => {
 }
 
 .change-flow__number {
-  font-size: 14px;
+  font-size: var(--app-text-base);
   line-height: 25px;
   font-variant-numeric: tabular-nums;
   opacity: 0.65;
@@ -1146,7 +1146,7 @@ onMounted(async () => {
 
     :deep(.brand-mark__name) {
       color: white;
-      font-size: 22px;
+      font-size: var(--app-text-3xl);
     }
   }
 }

@@ -4,7 +4,7 @@
 
 Built on Tencent/WeKnora. Versioned evidence, trusted verification, and human handoff for development changes.
 
-[源码启动](./docs/CHANGE_PILOT_QUICKSTART.md) · [功能与接口](./CHANGE_WORKSPACE.md) · [验证记录](./docs/CHANGE_WORKSPACE_VALIDATION_20261020.md) · [上游与贡献](#上游与贡献)
+[源码启动](./docs/CHANGE_PILOT_QUICKSTART.md) · [功能与接口](./CHANGE_WORKSPACE.md) · [验证记录](./docs/CHANGE_WORKSPACE_VALIDATION_20261020.md) · [公开交付状态](./docs/PUBLICATION_STATUS_20261020.md) · [上游与贡献](#上游与贡献)
 
 开发者使用 Codex 或 Claude Code 修改业务代码后，通常还要回答：改动依据来自哪个版本？哪些检查实际执行过？失败修复后旧报告是否仍可用？谁最终接收了这次变更？ChangePilot 将这些信息组织为一张变更单，执行工作交给独立的 TaskFlow-Go。
 

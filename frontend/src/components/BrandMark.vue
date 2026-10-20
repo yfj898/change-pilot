@@ -19,7 +19,7 @@ import { product } from '@/config/branding'
   align-items: center;
   gap: 7px;
   white-space: nowrap;
-  color: var(--td-brand-color, #07a35a);
+  color: var(--td-brand-color);
 }
 
 .brand-mark__symbol {
@@ -29,8 +29,8 @@ import { product } from '@/config/branding'
 }
 
 .brand-mark__name {
-  color: var(--td-text-color-primary, #172d23);
-  font-size: 18px;
+  color: var(--td-text-color-primary);
+  font-size: var(--app-text-2xl);
   font-weight: 720;
   letter-spacing: -0.6px;
   line-height: 1.25;
