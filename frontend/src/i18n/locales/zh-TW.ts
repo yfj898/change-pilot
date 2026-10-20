@@ -1,6 +1,8 @@
 import { changeWorkspaceZH } from '../changeWorkspace'
+import { productBrandingZH } from '../productBranding'
 
 export default {
+  brand: productBrandingZH,
   changes: changeWorkspaceZH,
   modelCatalog: {
     "title": "模型目錄",
@@ -541,7 +543,7 @@ export default {
   },
   integrations: {
     cli: {
-      title: 'WeKnora CLI',
+      title: 'ChangePilot CLI',
       subtitle: '在終端中管理知識庫和文件、檢索內容併發起問答，也可透過指令碼或 MCP 接入 AI 工具。',
       docs: '查看 CLI 文件',
       docsHint: '安裝說明與完整命令參考',
@@ -778,14 +780,14 @@ export default {
       directWarning: '直接傳使用者 ID 會信任呼叫方請求頭，僅適用於可信伺服器端到伺服器端呼叫。',
       directWarningDetail: '任何持有 API Key 的呼叫方都可以透過修改使用者 ID 請求頭冒充其他外部使用者，從而共用或劫持其 MCP OAuth 授權。請勿用於瀏覽器或不可信用戶端；面向終端使用者請使用「簽章 Token」。',
       signedRecommended: '推薦給面向使用者的應用：由你的業務後端為外部使用者籤發短期 HS256 JWT。',
-      signedFlowDetail: 'HMAC 金鑰僅儲存在 WeKnora 與你的可信後端，切勿放入請求或下發給瀏覽器。請求頭裡傳的是用該金鑰籤出的 JWT 字符串（每次籤發或過期後會變），不是金鑰本身。JWT 須包含 sub（外部使用者 ID）、tenant_id、aud=weknora、exp（有效期不超過 24 小時）。',
+      signedFlowDetail: 'HMAC 金鑰僅儲存在 ChangePilot 與你的可信後端，切勿放入請求或下發給瀏覽器。請求頭裡傳的是用該金鑰籤出的 JWT 字符串（每次籤發或過期後會變），不是金鑰本身。JWT 須包含 sub（外部使用者 ID）、tenant_id、aud=weknora、exp（有效期不超過 24 小時）。',
       directHeader: '使用者 ID 請求頭',
       requireDirectHeader: '必須攜帶使用者 ID',
       requireDirectHeaderDesc: '開啟後，缺少使用者 ID 請求頭的 API Key 請求將被拒絕；關閉則按整個空間統一處理，不區分具體終端使用者。',
       tokenHeader: 'Token 請求頭',
       tokenHeaderDesc: '用戶端在該固定請求頭中攜帶後端籤發的 JWT。',
       hmacSecret: 'HMAC 金鑰',
-      hmacSecretDesc: '與 WeKnora 儲存的同一份金鑰；僅用於後端籤發 JWT，不要作為請求頭髮送。',
+      hmacSecretDesc: '與 ChangePilot 儲存的同一份金鑰；僅用於後端籤發 JWT，不要作為請求頭髮送。',
       secretConfigured: '已設定金鑰（不可回看）；輸入新值可輪換',
       secretSavedCopyHint: '金鑰已儲存，請立即複製到後端設定。離開本頁後將無法再次查看。',
       generateSecret: '生成金鑰',
@@ -2373,7 +2375,7 @@ export default {
     askUser: '向使用者提問'
   },
   assistant: {
-    title: 'WeKnora 助手',
+    title: 'ChangePilot 助手',
     newConversation: '新對話',
     history: '歷史對話',
     untitledConversation: '未命名對話',
@@ -2387,7 +2389,7 @@ export default {
     },
     welcomeTitle: '有什麼可以幫你？',
     agentWelcomeDesc: '可以檢查這個智慧代理的設定、調整模型或查看它能檢索的知識庫。',
-    welcomeDesc: '我可以解答 WeKnora 的用法，也可以檢視和處理你空間裡的文件解析、知識庫動態和 Wiki 問題，還能幫你建立和設定智慧代理。變更前是否先請你確認，由輸入框下方的權限等級決定。',
+    welcomeDesc: '我可以解答 ChangePilot 的用法，也可以檢視和處理你空間裡的文件解析、知識庫動態和 Wiki 問題，還能幫你建立和設定智慧代理。變更前是否先請你確認，由輸入框下方的權限等級決定。',
     startFailed: '啟動助手失敗，請重試',
     askAboutDocument: '問 {name}',
     askAboutAnswer: '就這則回答問 {name}',
@@ -2465,7 +2467,7 @@ export default {
       documentSummary: '總結一下這個文件',
       failedDocuments: '這個知識庫有哪些解析失敗的文件？',
       recentActivity: '這個知識庫最近有哪些變動？',
-      formats: 'WeKnora 支援哪些文件格式？',
+      formats: 'ChangePilot 支援哪些文件格式？',
       createWiki: '怎樣建立 Wiki 知識庫？',
       agents: '我有哪些智慧代理？分別用的什麼模型？',
       messageSources: '這則回答的依據是什麼？',
@@ -5351,7 +5353,7 @@ export default {
       systemActor: '系統觸發',
       actorWithAPIKey: '{actor} · API Key · {name}',
       actorAPIKey: 'API Key · {name}',
-      viaAssistant: '經 WeKnora 助手',
+      viaAssistant: '經 ChangePilot 助手',
       knowledgeBase: '知識庫',
       countItems: '共 {count} 項',
       titleWithCount: '{title} 等 {count} 項',
@@ -5504,7 +5506,7 @@ export default {
     welcomeMessageDesc: '訪客打開內嵌聊天後、尚未發言時展示；留空則不顯示',
     showSuggestedQuestions: '推薦問題',
     showSuggestedQuestionsDesc: '訪客未發言前展示快捷提問，內容來自智慧代理設定與關聯知識庫',
-    originsHint: '填寫允許內嵌的宿主網站來源（A），不是 WeKnora 地址（B）。每行一個完整 Origin，如 https://shop.example.com；至少一項，支持 *.example.com 子域通配',
+    originsHint: '填寫允許內嵌的宿主網站來源（A），不是 ChangePilot 地址（B）。每行一個完整 Origin，如 https://shop.example.com；至少一項，支持 *.example.com 子域通配',
     originsRequired: '請至少填寫一個域名白名單',
     originsInvalid: '域名格式無效：{origin}',
     originsWildcardProd: '生產環境不允許使用萬用字元 *',
@@ -5563,7 +5565,7 @@ export default {
     allowFileUploadDesc: '開啟後，訪客可上傳圖片與文件附件。僅當綁定的智慧代理已啟用圖片上傳時才會生效。',
     webhookUrl: 'Webhook 地址',
     webhookUrlPlaceholder: 'https://your-server.example.com/weknora/embed-events',
-    webhookUrlDesc: '可選。訪客發訊息與助手回覆完成時，WeKnora 會向該 HTTPS 地址 POST 事件（message_sent / message_received）。',
+    webhookUrlDesc: '可選。訪客發訊息與助手回覆完成時，ChangePilot 會向該 HTTPS 地址 POST 事件（message_sent / message_received）。',
     webhookSecret: 'Webhook 簽章金鑰',
     webhookSecretPlaceholder: '用於 HMAC-SHA256 簽章（X-WeKnora-Signature）',
     webhookSecretKeep: '留空表示不修改已儲存的金鑰',
@@ -5666,7 +5668,7 @@ export default {
     }
   },
   createChat: {
-    title: 'Hi，我是 WeKnora，讓你的知識觸手可及',
+    title: 'Hi，我是 ChangePilot，讓你的知識觸手可及',
     newSessionTitle: '新會話',
     openProject: '選擇專案',
     clearProject: '取消綁定',
@@ -5975,11 +5977,11 @@ export default {
     haveAccount: '已有帳戶？',
     backToLogin: '返回登入',
     loginHint: '登入以繼續使用；首次使用請在下方建立帳戶。',
-    firstTime: '首次使用 WeKnora？',
+    firstTime: '首次使用 ChangePilot？',
     registerSuccess: '註冊成功，請登入',
     registerFailed: '註冊失敗',
     subtitle: 'RAG 問答、ReAct 智慧代理與 Wiki 知識庫，大型語言模型驅動的企業級知識框架',
-    registerSubtitle: '建立帳戶並開始使用 WeKnora',
+    registerSubtitle: '建立帳戶並開始使用 ChangePilot',
     emailPlaceholder: '輸入電子信箱地址',
     passwordPlaceholder: '輸入密碼',
     confirmPasswordPlaceholder: '再次輸入密碼',
@@ -6268,7 +6270,7 @@ export default {
     title: '沙箱金鑰',
     host: {
       title: '環境變數',
-      description: '給本機技能用的個人金鑰，不是 WeKnora 的系統或部署設定。',
+      description: '給本機技能用的個人金鑰，不是 ChangePilot 的系統或部署設定。',
       helpAria: '環境變數說明',
       introRuntimeBody: '技能在這台電腦上運行時才會注入；對話裡也可以當場提供。儲存後不再顯示明文。',
       loadFailed: '環境變數載入失敗。',
@@ -6277,7 +6279,7 @@ export default {
       nameInvalid: '這個名字不能用。保留名（例如 PATH，或以 WEKNORA_ 開頭的名字）不接受。',
       deleteConfirm: '刪除 {name}？之後在這台電腦上運行的東西都不會再帶上它。',
     },
-    description: '給技能和沙箱用的個人金鑰，不是 WeKnora 的系統或部署設定。',
+    description: '給技能和沙箱用的個人金鑰，不是 ChangePilot 的系統或部署設定。',
     helpAria: '沙箱金鑰說明',
     introPersonalTitle: '只屬於你',
     introPersonalBody: '只注入到你自己的對話和執行裡，空間裡的其他人看不到，也不會改成他們的值。',
@@ -6496,7 +6498,7 @@ export default {
       dockerDisabledAlert: '當前部署未啟用 Docker 沙箱',
       dockerDisabledHint: '本機 docker.sock 等同宿主機 root。僅私有化單機需要時，由系統管理員在「設定 → 系統設定 → 網路安全」中打開。',
       dockerDisabledCard: '部署未啟用 Docker 沙箱，此設定不會再建立容器',
-      dockerHostRisk: '留空或 unix:// 會使用 WeKnora 所在機器的 Docker 守護行程，權限等同該機 root，只適合私有化單機。多套空間共用同一主機時請改用 Cube 或 E2B。遠程 tcp:// 必須填寫 TLS 證書目錄。',
+      dockerHostRisk: '留空或 unix:// 會使用 ChangePilot 所在機器的 Docker 守護行程，權限等同該機 root，只適合私有化單機。多套空間共用同一主機時請改用 Cube 或 E2B。遠程 tcp:// 必須填寫 TLS 證書目錄。',
       addConfig: '新增沙箱',
       viewClusterGuide: '叢集搭建指南',
       configName: '設定名稱',
@@ -6692,9 +6694,9 @@ export default {
       dockerHost: 'Docker 守護行程地址',
       dockerHostHelp: '留空跟隨本機 docker CLI（DOCKER_HOST 或當前 docker context），不必手填 /var/run/docker.sock。遠程守護行程填 tcp://host:2376，必須同時填寫 TLS 證書目錄，私網地址還要開啟「允許存取私網地址」。',
       dockerTlsCertPath: 'TLS 證書目錄',
-      dockerTlsCertPathHelp: 'WeKnora 所在主機上包含 ca.pem、cert.pem、key.pem 的目錄。遠程守護行程必填，證書不入庫，由部署方掛載。',
+      dockerTlsCertPathHelp: 'ChangePilot 所在主機上包含 ca.pem、cert.pem、key.pem 的目錄。遠程守護行程必填，證書不入庫，由部署方掛載。',
       dockerIdleTtl: '空閒回收（秒）',
-      dockerIdleTtlHelp: 'Docker 守護行程本身沒有空閒超時。容器多久沒有執行任何命令就會被 WeKnora 回收，會話繼續時重建。留空按 1800 秒。',
+      dockerIdleTtlHelp: 'Docker 守護行程本身沒有空閒超時。容器多久沒有執行任何命令就會被 ChangePilot 回收，會話繼續時重建。留空按 1800 秒。',
       dockerCpuLimit: 'CPU 核數上限',
       dockerCpuLimitHelp: '單個沙箱可用的 CPU 核數，0 使用內建預設。',
       dockerMemoryLimit: '記憶體上限（MB）',
@@ -8302,10 +8304,10 @@ export default {
       },
       knowledge: {
         title: '建立你的知識庫',
-        desc: '知識庫是一切的起點：上傳文件、網頁或 FAQ，WeKnora 會自動解析並建立索引。點擊這裡進入知識庫。'
+        desc: '知識庫是一切的起點：上傳文件、網頁或 FAQ，ChangePilot 會自動解析並建立索引。點擊這裡進入知識庫。'
       },
       welcome: {
-        title: '歡迎使用 WeKnora',
+        title: '歡迎使用 ChangePilot',
         desc: '只需幾步，帶你快速了解知識庫、對話與智慧代理的核心用法。點擊「下一步」開始。'
       }
     }

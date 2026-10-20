@@ -1,6 +1,8 @@
 import { changeWorkspaceEN } from '../changeWorkspace'
+import { productBrandingEN } from '../productBranding'
 
 export default {
+  brand: productBrandingEN,
   changes: changeWorkspaceEN,
   modelCatalog: {
     "title": "モデルカタログ",
@@ -394,12 +396,12 @@ export default {
     reopen: 'プロダクトツアー',
     steps: {
       welcome: {
-        title: 'WeKnoraへようこそ',
+        title: 'ChangePilotへようこそ',
         desc: '数ステップでナレッジベース、チャット、エージェントの使い方をご紹介します。「次へ」をクリックして開始してください。'
       },
       knowledge: {
         title: 'ナレッジベースを作成',
-        desc: 'すべてはここから始まります。ドキュメント、Webページ、FAQをアップロードすると、WeKnoraが自動で解析してインデックスを作成します。ここをクリックしてナレッジベースを開いてください。'
+        desc: 'すべてはここから始まります。ドキュメント、Webページ、FAQをアップロードすると、ChangePilotが自動で解析してインデックスを作成します。ここをクリックしてナレッジベースを開いてください。'
       },
       chat: {
         title: 'AIチャットを開始',
@@ -1520,12 +1522,12 @@ export default {
       backendDescriptions: {
         cube: 'プライベート環境やオンプレミス向けのセルフホストMicroVMクラスタ',
         e2b: 'マネージドMicroVMサービス、またはE2B互換のデプロイ',
-        docker: 'このWeKnoraホスト上でセッションごとに長時間稼働するコンテナを保持します。スクリプトとファイルはそのコンテナ内に残ります',
+        docker: 'このChangePilotホスト上でセッションごとに長時間稼働するコンテナを保持します。スクリプトとファイルはそのコンテナ内に残ります',
       },
       dockerDisabledAlert: 'このデプロイではDockerサンドボックスが有効になっていません',
       dockerDisabledHint: 'ローカルのdocker.sockはホスト上のroot権限に相当します。単一マシンのプライベート環境では、システム管理者が「設定 → システム設定 → ネットワークセキュリティ」から有効化できます。',
       dockerDisabledCard: 'このデプロイではDockerサンドボックスが無効です。この設定ではコンテナは作成されません',
-      dockerHostRisk: '空欄またはunix://を指定するとWeKnoraホストのDockerデーモンを使用します。これはそのマシンのroot権限に相当します。単一ノードのプライベート環境でのみ使用してください。複数のワークスペースがホストを共有する場合はCubeまたはE2Bを推奨します。リモートのtcp://エンドポイントにはTLS証明書ディレクトリが必要です。',
+      dockerHostRisk: '空欄またはunix://を指定するとChangePilotホストのDockerデーモンを使用します。これはそのマシンのroot権限に相当します。単一ノードのプライベート環境でのみ使用してください。複数のワークスペースがホストを共有する場合はCubeまたはE2Bを推奨します。リモートのtcp://エンドポイントにはTLS証明書ディレクトリが必要です。',
       addConfig: 'サンドボックスを追加',
       viewClusterGuide: 'クラスタ構築ガイド',
       configName: '設定名',
@@ -1721,9 +1723,9 @@ export default {
       dockerHost: 'Dockerデーモンのエンドポイント',
       dockerHostHelp: '空欄の場合はローカルのdocker CLI（DOCKER_HOSTまたは現在のdockerコンテキスト）に従うため、/var/run/docker.sockを入力する必要はありません。リモートデーモンを使う場合はtcp://host:2376を指定してTLS証明書ディレクトリを入力し、RFC1918アドレスでは「プライベートエンドポイントを許可」を有効にしてください。',
       dockerTlsCertPath: 'TLS証明書ディレクトリ',
-      dockerTlsCertPathHelp: 'WeKnoraホスト上でca.pem、cert.pem、key.pemを格納しているディレクトリです。リモートデーモンでは必須です。証明書はデプロイ側でマウントされ、ここには保存されません。',
+      dockerTlsCertPathHelp: 'ChangePilotホスト上でca.pem、cert.pem、key.pemを格納しているディレクトリです。リモートデーモンでは必須です。証明書はデプロイ側でマウントされ、ここには保存されません。',
       dockerIdleTtl: 'アイドル回収（秒）',
-      dockerIdleTtlHelp: 'Dockerデーモン自体にはアイドルタイムアウトがありません。この時間コマンドが実行されなかったコンテナはWeKnoraが回収し、セッションが続く場合は再作成します。空欄の場合は1800秒です。',
+      dockerIdleTtlHelp: 'Dockerデーモン自体にはアイドルタイムアウトがありません。この時間コマンドが実行されなかったコンテナはChangePilotが回収し、セッションが続く場合は再作成します。空欄の場合は1800秒です。',
       dockerCpuLimit: 'CPUコア数の上限',
       dockerCpuLimitHelp: 'サンドボックス1つが使用できるCPUコア数です。0の場合は組み込みのデフォルトを使用します。',
       dockerMemoryLimit: 'メモリ上限（MB）',
@@ -2458,7 +2460,7 @@ export default {
     title: 'サンドボックスのシークレット',
     host: {
       title: '環境変数',
-      description: 'このコンピューター上のスキルで使う個人用のキーです。WeKnoraのシステム設定やデプロイ設定ではありません。',
+      description: 'このコンピューター上のスキルで使う個人用のキーです。ChangePilotのシステム設定やデプロイ設定ではありません。',
       helpAria: '環境変数について',
       introRuntimeBody: 'スキルがこのコンピューターで動くときに注入されます。対話中にその場で渡すこともできます。保存後は平文を再表示しません。',
       loadFailed: '環境変数を読み込めませんでした。',
@@ -2467,7 +2469,7 @@ export default {
       nameInvalid: 'この名前は使えません。予約名（PATH や WEKNORA_ で始まる名前）は受け付けません。',
       deleteConfirm: '{name} を削除しますか？これ以降、このコンピューターでの実行には含まれません。',
     },
-    description: 'スキルとサンドボックスで使う個人用のキーです。WeKnoraのシステム設定やデプロイ設定ではありません。',
+    description: 'スキルとサンドボックスで使う個人用のキーです。ChangePilotのシステム設定やデプロイ設定ではありません。',
     helpAria: 'サンドボックスのシークレットについて',
     introPersonalTitle: 'あなただけのもの',
     introPersonalBody: 'あなた自身のチャットや実行にのみ注入されます。他のメンバーからは見えず、他のメンバーの値があなたの値を上書きすることもありません。',
@@ -2698,11 +2700,11 @@ export default {
     haveAccount: 'すでにアカウントをお持ちですか？',
     backToLogin: 'ログインに戻る',
     loginHint: 'ログインして続行してください。初めての方は下からアカウントを作成できます。',
-    firstTime: 'WeKnoraは初めてですか？',
+    firstTime: 'ChangePilotは初めてですか？',
     registerSuccess: '登録が完了しました。ログインしてください',
     registerFailed: '登録に失敗しました',
     subtitle: 'RAG質問応答、ReActエージェント、Wiki。LLMが支える企業向けナレッジフレームワーク',
-    registerSubtitle: 'アカウントを作成してWeKnoraを使い始めましょう',
+    registerSubtitle: 'アカウントを作成してChangePilotを使い始めましょう',
     emailPlaceholder: 'メールアドレスを入力',
     passwordPlaceholder: 'パスワードを入力',
     confirmPasswordPlaceholder: 'パスワードを再入力',
@@ -3020,7 +3022,7 @@ export default {
     goToAgentSettings: 'エージェント設定に移動'
   },
   createChat: {
-    title: 'こんにちは、WeKnoraです。あなたのナレッジを、すぐそばに',
+    title: 'こんにちは、ChangePilotです。あなたのナレッジを、すぐそばに',
     newSessionTitle: '新しいセッション',
     openProject: 'プロジェクトを選択',
     clearProject: '解除',
@@ -3132,7 +3134,7 @@ export default {
     welcomeMessageDesc: '訪問者が最初のメッセージを送る前に埋め込みチャットに表示されます。空欄にすると非表示になります',
     showSuggestedQuestions: '質問候補',
     showSuggestedQuestionsDesc: '訪問者の最初のメッセージの前に、エージェント設定と連携ナレッジベースをもとにした質問候補を表示します',
-    originsHint: 'WeKnora の URL（B）ではなく、埋め込みを許可するホストサイト（A）を入力します。1 行に 1 つの Origin（例: https://shop.example.com）。1 件以上必須。*.example.com に対応。',
+    originsHint: 'ChangePilot の URL（B）ではなく、埋め込みを許可するホストサイト（A）を入力します。1 行に 1 つの Origin（例: https://shop.example.com）。1 件以上必須。*.example.com に対応。',
     originsRequired: '許可オリジンを1件以上入力してください',
     originsInvalid: '無効なオリジン: {origin}',
     originsWildcardProd: '本番環境ではワイルドカードのオリジン「*」は使用できません',
@@ -3191,7 +3193,7 @@ export default {
     allowFileUploadDesc: '有効にすると、訪問者は画像やドキュメントの添付をアップロードできます。紐付けたエージェントが画像アップロードに対応している必要があります。',
     webhookUrl: 'Webhook URL',
     webhookUrlPlaceholder: 'https://your-server.example.com/weknora/embed-events',
-    webhookUrlDesc: '任意。WeKnoraがmessage_sent / message_receivedイベントをこのHTTPSエンドポイントにPOSTします。',
+    webhookUrlDesc: '任意。ChangePilotがmessage_sent / message_receivedイベントをこのHTTPSエンドポイントにPOSTします。',
     webhookSecret: 'Webhookシークレット',
     webhookSecretPlaceholder: 'HMAC-SHA256シークレット（X-WeKnora-Signatureヘッダー）',
     webhookSecretKeep: '空欄のままにすると保存済みのシークレットを維持します',
@@ -3265,7 +3267,7 @@ export default {
       systemActor: 'システム',
       actorWithAPIKey: '{actor} · API Key · {name}',
       actorAPIKey: 'API Key · {name}',
-      viaAssistant: 'WeKnora アシスタント経由',
+      viaAssistant: 'ChangePilot アシスタント経由',
       knowledgeBase: 'ナレッジベース',
       countItems: '{count}件',
       titleWithCount: '{title}ほか{count}件',
@@ -6143,7 +6145,7 @@ export default {
       videoNotSupported: 'お使いのブラウザは動画再生に対応していません'
     },
     assistant: {
-      title: 'WeKnora アシスタント',
+      title: 'ChangePilot アシスタント',
       newConversation: '新しい会話',
       history: '会話履歴',
       untitledConversation: '無題の会話',
@@ -6157,7 +6159,7 @@ export default {
       },
       welcomeTitle: '何をお手伝いしましょうか？',
       agentWelcomeDesc: 'このエージェントの設定を確認したり、モデルを変更したり、検索可能なナレッジベースを確認できます。',
-      welcomeDesc: 'WeKnora の使い方にお答えするほか、ワークスペースのドキュメント解析、ナレッジベースの履歴、Wiki の問題を確認・対応し、エージェントの作成や設定もお手伝いできます。変更の前に確認するかどうかは、入力欄の下の権限レベルで決まります。',
+      welcomeDesc: 'ChangePilot の使い方にお答えするほか、ワークスペースのドキュメント解析、ナレッジベースの履歴、Wiki の問題を確認・対応し、エージェントの作成や設定もお手伝いできます。変更の前に確認するかどうかは、入力欄の下の権限レベルで決まります。',
       startFailed: 'アシスタントを起動できませんでした。もう一度お試しください。',
       askAboutDocument: '{name}に聞く',
       askAboutAnswer: 'この回答について{name}に聞く',
@@ -6235,7 +6237,7 @@ export default {
       documentSummary: 'このドキュメントを要約して',
       failedDocuments: 'このナレッジベースで解析に失敗したドキュメントは？',
       recentActivity: 'このナレッジベースの最近の変更は？',
-      formats: 'WeKnora はどのドキュメント形式に対応していますか？',
+      formats: 'ChangePilot はどのドキュメント形式に対応していますか？',
       createWiki: 'Wiki ナレッジベースの作り方は？',
       agents: 'どんなエージェントがあり、それぞれどのモデルを使っていますか？',
       messageSources: 'この回答の根拠は何ですか？',
@@ -7735,7 +7737,7 @@ export default {
   },
   integrations: {
     cli: {
-      title: 'WeKnora CLI',
+      title: 'ChangePilot CLI',
       subtitle: 'ターミナルからナレッジベースとドキュメントの管理、コンテンツの検索、質問ができます。CLIやMCPを通じてスクリプトやAIツールと連携できます。',
       docs: 'CLIドキュメント',
       docsHint: 'インストール手順と完全なコマンドリファレンス',
@@ -7967,14 +7969,14 @@ export default {
       directWarning: 'ユーザIDの直接指定は、呼び出し元が渡すヘッダーを信頼します。信頼できるサーバ間通信でのみ使用してください。',
       directWarningDetail: 'APIキーを持つ人であれば誰でもユーザIDヘッダーを書き換えて他の外部ユーザになりすまし、そのユーザのMCP OAuth認可を再利用・乗っ取ることができます。ブラウザや信頼できないクライアントからは使用せず、エンドユーザ向けアプリでは署名付きトークンを使用してください。',
       signedRecommended: 'ユーザ向けアプリに推奨: 自社バックエンドで外部ユーザ用に有効期間の短いHS256 JWTを発行します。',
-      signedFlowDetail: 'HMACシークレットはWeKnoraと信頼できる自社バックエンドにのみ保存し、リクエストに含めたりブラウザに配布したりしないでください。リクエストヘッダーで送るのは、そのシークレットで署名したJWT文字列（発行ごと、または有効期限切れ後に変わります）であり、シークレット自体ではありません。JWTにはsub（外部ユーザID）、tenant_id、aud=weknora、exp（有効期間は最大24時間）を含める必要があります。',
+      signedFlowDetail: 'HMACシークレットはChangePilotと信頼できる自社バックエンドにのみ保存し、リクエストに含めたりブラウザに配布したりしないでください。リクエストヘッダーで送るのは、そのシークレットで署名したJWT文字列（発行ごと、または有効期限切れ後に変わります）であり、シークレット自体ではありません。JWTにはsub（外部ユーザID）、tenant_id、aud=weknora、exp（有効期間は最大24時間）を含める必要があります。',
       directHeader: 'ユーザIDヘッダー',
       requireDirectHeader: 'ユーザIDヘッダーを必須にする',
       requireDirectHeaderDesc: '有効にすると、ユーザIDヘッダーのないAPIキーリクエストは拒否されます。無効の場合、すべてのリクエストはユーザを区別せずワークスペース全体として扱われます。',
       tokenHeader: 'トークンヘッダー',
       tokenHeaderDesc: 'クライアントはバックエンドで署名したJWTをこの固定ヘッダーで送信します。',
       hmacSecret: 'HMACシークレット',
-      hmacSecretDesc: 'WeKnoraに保存されているものと同じシークレットです。JWTの署名のためバックエンドでのみ使用し、リクエストヘッダーとして送信しないでください。',
+      hmacSecretDesc: 'ChangePilotに保存されているものと同じシークレットです。JWTの署名のためバックエンドでのみ使用し、リクエストヘッダーとして送信しないでください。',
       secretConfigured: 'シークレットは設定済みです（再表示されません）。ローテーションするには新しい値を入力してください',
       secretSavedCopyHint: 'シークレットを保存しました。このページを離れると再表示できないため、今すぐバックエンドにコピーしてください。',
       generateSecret: 'シークレットを生成',

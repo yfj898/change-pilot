@@ -35,7 +35,7 @@ jobs:
     # Manual workflow_dispatch always runs.
     if: |
       github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'acceptance-e2e'))
+      (github.repository == 'Tencent/WeKnora' && github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'acceptance-e2e'))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

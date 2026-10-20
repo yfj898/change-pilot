@@ -1,6 +1,8 @@
 import { changeWorkspaceZH } from '../changeWorkspace'
+import { productBrandingZH } from '../productBranding'
 
 export default {
+  brand: productBrandingZH,
   changes: changeWorkspaceZH,
   modelCatalog: {
     "title": "模型目录",
@@ -541,7 +543,7 @@ export default {
   },
   integrations: {
     cli: {
-      title: 'WeKnora CLI',
+      title: 'ChangePilot CLI',
       subtitle: '在终端中管理知识库和文档、检索内容并发起问答，也可通过脚本或 MCP 接入 AI 工具。',
       docs: '查看 CLI 文档',
       docsHint: '安装说明与完整命令参考',
@@ -778,14 +780,14 @@ export default {
       directWarning: '直接传用户 ID 会信任调用方请求头，仅适用于可信服务端到服务端调用。',
       directWarningDetail: '任何持有 API Key 的调用方都可以通过修改用户 ID 请求头冒充其他外部用户，从而共用或劫持其 MCP OAuth 授权。请勿用于浏览器或不可信客户端；面向终端用户请使用「签名 Token」。',
       signedRecommended: '推荐给面向用户的应用：由你的业务后端为外部用户签发短期 HS256 JWT。',
-      signedFlowDetail: 'HMAC 密钥仅保存在 WeKnora 与你的可信后端，切勿放入请求或下发给浏览器。请求头里传的是用该密钥签出的 JWT 字符串（每次签发或过期后会变），不是密钥本身。JWT 须包含 sub（外部用户 ID）、tenant_id、aud=weknora、exp（有效期不超过 24 小时）。',
+      signedFlowDetail: 'HMAC 密钥仅保存在 ChangePilot 与你的可信后端，切勿放入请求或下发给浏览器。请求头里传的是用该密钥签出的 JWT 字符串（每次签发或过期后会变），不是密钥本身。JWT 须包含 sub（外部用户 ID）、tenant_id、aud=weknora、exp（有效期不超过 24 小时）。',
       directHeader: '用户 ID 请求头',
       requireDirectHeader: '必须携带用户 ID',
       requireDirectHeaderDesc: '开启后，缺少用户 ID 请求头的 API Key 请求将被拒绝；关闭则按整个空间统一处理，不区分具体终端用户。',
       tokenHeader: 'Token 请求头',
       tokenHeaderDesc: '客户端在该固定请求头中携带后端签发的 JWT。',
       hmacSecret: 'HMAC 密钥',
-      hmacSecretDesc: '与 WeKnora 保存的同一份密钥；仅用于后端签发 JWT，不要作为请求头发送。',
+      hmacSecretDesc: '与 ChangePilot 保存的同一份密钥；仅用于后端签发 JWT，不要作为请求头发送。',
       secretConfigured: '已配置密钥（不可回看）；输入新值可轮换',
       secretSavedCopyHint: '密钥已保存，请立即复制到后端配置。离开本页后将无法再次查看。',
       generateSecret: '生成密钥',
@@ -2373,7 +2375,7 @@ export default {
     askUser: '向用户提问'
   },
   assistant: {
-    title: 'WeKnora 助手',
+    title: 'ChangePilot 助手',
     newConversation: '新对话',
     history: '历史对话',
     untitledConversation: '未命名对话',
@@ -2387,7 +2389,7 @@ export default {
     },
     welcomeTitle: '有什么可以帮你？',
     agentWelcomeDesc: '可以检查这个智能体的配置、调整模型或查看它能检索的知识库。',
-    welcomeDesc: '我可以解答 WeKnora 的用法，也可以查看和处理你空间里的文档解析、知识库动态和 Wiki 问题，还能帮你创建和配置智能体。改动前是否先请你确认，由输入框下方的权限等级决定。',
+    welcomeDesc: '我可以解答 ChangePilot 的用法，也可以查看和处理你空间里的文档解析、知识库动态和 Wiki 问题，还能帮你创建和配置智能体。改动前是否先请你确认，由输入框下方的权限等级决定。',
     startFailed: '启动助手失败，请重试',
     askAboutDocument: '问 {name}',
     askAboutAnswer: '就这条回答问 {name}',
@@ -2465,7 +2467,7 @@ export default {
       documentSummary: '总结一下这个文档',
       failedDocuments: '这个知识库有哪些解析失败的文档？',
       recentActivity: '这个知识库最近有哪些变动？',
-      formats: 'WeKnora 支持哪些文档格式？',
+      formats: 'ChangePilot 支持哪些文档格式？',
       createWiki: '怎样创建 Wiki 知识库？',
       agents: '我有哪些智能体？分别用的什么模型？',
       messageSources: '这个回答的依据是什么？',
@@ -5351,7 +5353,7 @@ export default {
       systemActor: '系统触发',
       actorWithAPIKey: '{actor} · API Key · {name}',
       actorAPIKey: 'API Key · {name}',
-      viaAssistant: '经 WeKnora 助手',
+      viaAssistant: '经 ChangePilot 助手',
       knowledgeBase: '知识库',
       countItems: '共 {count} 项',
       titleWithCount: '{title} 等 {count} 项',
@@ -5504,7 +5506,7 @@ export default {
     welcomeMessageDesc: '访客打开嵌入聊天后、尚未发言时展示；留空则不显示',
     showSuggestedQuestions: '推荐问题',
     showSuggestedQuestionsDesc: '访客未发言前展示快捷提问，内容来自智能体配置与关联知识库',
-    originsHint: '填写允许嵌入的宿主网站来源（A），不是 WeKnora 地址（B）。每行一个完整 Origin，如 https://shop.example.com；至少一项，支持 *.example.com 子域通配',
+    originsHint: '填写允许嵌入的宿主网站来源（A），不是 ChangePilot 地址（B）。每行一个完整 Origin，如 https://shop.example.com；至少一项，支持 *.example.com 子域通配',
     originsRequired: '请至少填写一个域名白名单',
     originsInvalid: '域名格式无效：{origin}',
     originsWildcardProd: '生产环境不允许使用通配符 *',
@@ -5563,7 +5565,7 @@ export default {
     allowFileUploadDesc: '开启后，访客可上传图片与文档附件。仅当绑定的智能体已启用图片上传时才会生效。',
     webhookUrl: 'Webhook 地址',
     webhookUrlPlaceholder: 'https://your-server.example.com/weknora/embed-events',
-    webhookUrlDesc: '可选。访客发消息与助手回复完成时，WeKnora 会向该 HTTPS 地址 POST 事件（message_sent / message_received）。',
+    webhookUrlDesc: '可选。访客发消息与助手回复完成时，ChangePilot 会向该 HTTPS 地址 POST 事件（message_sent / message_received）。',
     webhookSecret: 'Webhook 签名密钥',
     webhookSecretPlaceholder: '用于 HMAC-SHA256 签名（X-WeKnora-Signature）',
     webhookSecretKeep: '留空表示不修改已保存的密钥',
@@ -5666,7 +5668,7 @@ export default {
     }
   },
   createChat: {
-    title: 'Hi，我是 WeKnora，让你的知识触手可及',
+    title: 'Hi，我是 ChangePilot，让你的知识触手可及',
     newSessionTitle: '新会话',
     openProject: '选择项目',
     clearProject: '取消绑定',
@@ -5975,11 +5977,11 @@ export default {
     haveAccount: '已有账户？',
     backToLogin: '返回登录',
     loginHint: '登录以继续使用；首次使用请在下方创建账户。',
-    firstTime: '首次使用 WeKnora？',
+    firstTime: '首次使用 ChangePilot？',
     registerSuccess: '注册成功，请登录',
     registerFailed: '注册失败',
     subtitle: 'RAG 问答、ReAct 智能体与 Wiki 知识库，大模型驱动的企业级知识框架',
-    registerSubtitle: '创建账户并开始使用 WeKnora',
+    registerSubtitle: '创建账户并开始使用 ChangePilot',
     emailPlaceholder: '输入邮箱地址',
     passwordPlaceholder: '输入密码',
     confirmPasswordPlaceholder: '再次输入密码',
@@ -6268,7 +6270,7 @@ export default {
     title: '沙箱密钥',
     host: {
       title: '环境变量',
-      description: '给本机技能用的个人密钥，不是 WeKnora 的系统或部署配置。',
+      description: '给本机技能用的个人密钥，不是 ChangePilot 的系统或部署配置。',
       helpAria: '环境变量说明',
       introRuntimeBody: '技能在这台电脑上运行时才会注入；对话里也可以当场提供。保存后不再显示明文。',
       loadFailed: '环境变量加载失败。',
@@ -6277,7 +6279,7 @@ export default {
       nameInvalid: '这个名字不能用。保留名（例如 PATH，或以 WEKNORA_ 开头的名字）不接受。',
       deleteConfirm: '删除 {name}？之后在这台电脑上运行的东西都不会再带上它。',
     },
-    description: '给技能和沙箱用的个人密钥，不是 WeKnora 的系统或部署配置。',
+    description: '给技能和沙箱用的个人密钥，不是 ChangePilot 的系统或部署配置。',
     helpAria: '沙箱密钥说明',
     introPersonalTitle: '只属于你',
     introPersonalBody: '只注入到你自己的对话和执行里，空间里的其他人看不到，也不会改成他们的值。',
@@ -6496,7 +6498,7 @@ export default {
       dockerDisabledAlert: '当前部署未启用 Docker 沙箱',
       dockerDisabledHint: '本机 docker.sock 等同宿主机 root。仅私有化单机需要时，由系统管理员在「设置 → 系统设置 → 网络安全」中打开。',
       dockerDisabledCard: '部署未启用 Docker 沙箱，此配置不会再创建容器',
-      dockerHostRisk: '留空或 unix:// 会使用 WeKnora 所在机器的 Docker 守护进程，权限等同该机 root，只适合私有化单机。多套空间共用同一主机时请改用 Cube 或 E2B。远程 tcp:// 必须填写 TLS 证书目录。',
+      dockerHostRisk: '留空或 unix:// 会使用 ChangePilot 所在机器的 Docker 守护进程，权限等同该机 root，只适合私有化单机。多套空间共用同一主机时请改用 Cube 或 E2B。远程 tcp:// 必须填写 TLS 证书目录。',
       addConfig: '添加沙箱',
       viewClusterGuide: '集群搭建指南',
       configName: '配置名称',
@@ -6692,9 +6694,9 @@ export default {
       dockerHost: 'Docker 守护进程地址',
       dockerHostHelp: '留空跟随本机 docker CLI（DOCKER_HOST 或当前 docker context），不必手填 /var/run/docker.sock。远程守护进程填 tcp://host:2376，必须同时填写 TLS 证书目录，私网地址还要开启「允许访问私网地址」。',
       dockerTlsCertPath: 'TLS 证书目录',
-      dockerTlsCertPathHelp: 'WeKnora 所在主机上包含 ca.pem、cert.pem、key.pem 的目录。远程守护进程必填，证书不入库，由部署方挂载。',
+      dockerTlsCertPathHelp: 'ChangePilot 所在主机上包含 ca.pem、cert.pem、key.pem 的目录。远程守护进程必填，证书不入库，由部署方挂载。',
       dockerIdleTtl: '空闲回收（秒）',
-      dockerIdleTtlHelp: 'Docker 守护进程本身没有空闲超时。容器多久没有执行任何命令就会被 WeKnora 回收，会话继续时重建。留空按 1800 秒。',
+      dockerIdleTtlHelp: 'Docker 守护进程本身没有空闲超时。容器多久没有执行任何命令就会被 ChangePilot 回收，会话继续时重建。留空按 1800 秒。',
       dockerCpuLimit: 'CPU 核数上限',
       dockerCpuLimitHelp: '单个沙箱可用的 CPU 核数，0 使用内置默认。',
       dockerMemoryLimit: '内存上限（MB）',
@@ -8302,10 +8304,10 @@ export default {
       },
       knowledge: {
         title: '创建你的知识库',
-        desc: '知识库是一切的起点：上传文档、网页或 FAQ，WeKnora 会自动解析并建立索引。点击这里进入知识库。'
+        desc: '知识库是一切的起点：上传文档、网页或 FAQ，ChangePilot 会自动解析并建立索引。点击这里进入知识库。'
       },
       welcome: {
-        title: '欢迎使用 WeKnora',
+        title: '欢迎使用 ChangePilot',
         desc: '只需几步，带你快速了解知识库、对话与智能体的核心用法。点击「下一步」开始。'
       }
     }

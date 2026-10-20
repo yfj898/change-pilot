@@ -323,6 +323,7 @@ jobs:
 
   # ── 3. Create GitHub Release ──
   release:
+    if: github.repository == 'Tencent/WeKnora'
     needs: [build-binary, build-desktop-app]
     runs-on: ubuntu-latest
     steps:
@@ -415,6 +416,7 @@ jobs:
 
   # ── 4. Update Homebrew Formula ──
   update-homebrew:
+    if: github.repository == 'Tencent/WeKnora'
     needs: release
     runs-on: ubuntu-latest
     steps:

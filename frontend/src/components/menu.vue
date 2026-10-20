@@ -3,7 +3,7 @@
         <!-- 展开时：Logo + 搜索/折叠按钮同行 -->
         <div class="logo_row" v-if="!uiStore.sidebarCollapsed">
             <div class="logo_box" @click="router.push('/platform/knowledge-bases')" style="cursor: pointer;">
-                <img class="logo" src="@/assets/img/weknora.png" alt="">
+                <BrandMark class="logo" />
                 <sup v-if="isLiteEdition" class="lite-badge">Lite</sup>
             </div>
             <div class="logo_actions">
@@ -237,6 +237,7 @@ import { getSessionsList, batchDelSessions, deleteAllSessions, getSession } from
 import { useChatResourcesStore } from '@/stores/chatResources';
 import { listAllIMChannels } from '@/api/agent/index';
 import SessionSidebarRow from './SessionSidebarRow.vue';
+import BrandMark from './BrandMark.vue';
 import PanelResizeHandle from './PanelResizeHandle.vue';
 import { SIDEBAR_COLLAPSED_WIDTH, SIDEBAR_MIN_WIDTH, SIDEBAR_MAX_WIDTH } from '@/utils/sidebarWidth';
 import {
@@ -1392,8 +1393,16 @@ const resizeSidebar = (delta: number, keyboard: boolean) => {
         overflow: hidden;
 
         .logo {
-            width: 108px;
-            height: auto;
+            gap: 5px;
+
+            :deep(.brand-mark__symbol) {
+                width: 22px;
+                height: 22px;
+            }
+
+            :deep(.brand-mark__name) {
+                font-size: 16px;
+            }
         }
 
         .lite-badge {
@@ -2001,11 +2010,6 @@ const resizeSidebar = (delta: number, keyboard: boolean) => {
 }
 </style>
 <style lang="less">
-// Dark mode: invert dark logo to light
-html[theme-mode="dark"] .aside_box .logo_box .logo {
-    filter: invert(1) hue-rotate(180deg);
-}
-
 // Dark mode: 滚动条在深色背景下需要更亮的颜色才看得见
 html[theme-mode="dark"] .aside_box .menu_top:hover {
     scrollbar-color: rgba(255, 255, 255, 0.22) transparent;

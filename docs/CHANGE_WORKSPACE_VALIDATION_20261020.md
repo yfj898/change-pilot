@@ -1,6 +1,8 @@
-# Change Workspace 修复与构建交付
+# ChangePilot 验证记录
 
 日期：2026-10-20。上游基线为 `737d237283ee1a8abd19a4755ad3197f79ce1303`，本地分支为 `feature/change-workspace`。
+
+这里记录模块修复、真实服务集成与检查范围。下文 `tmp/` 日志、运行二进制及父工作区档案保存在验收机器，不随源码发布，也不是独立 clone 的启动依赖；源码启动见 [CHANGE_PILOT_QUICKSTART.md](./CHANGE_PILOT_QUICKSTART.md)。
 
 ## 用于总集成的产物
 
@@ -120,4 +122,14 @@ npm run build
 
 商品变更实际经历故障提交失败、页面拒收、修复 commit 三项必要检查通过与页面人工接收；SaaS 工单使用同一核心完成第二业务交接。真实 HTTP、CLI、HTTP MCP 协议客户端读取同一工单 context/run 完全一致，实际浏览器另行核对同一记录。三份中文文档已真实入库，两条向量查询首位命中对应规则；这两条样例不是检索准确率基准。
 
-新增功能关闭冒烟已完成：旧知识库和已解析文档读取均为 200，changes 明确 503；随后已恢复新功能、TaskFlow 直连并停止故障代理。用户批准的临时模型入口已关闭，原 Windows 回环 Ollama 保留。完整运行与浏览器证据位于父工作区 `docs/resume_jd_20261019/acceptance_results_20261020.md`。
+新增功能关闭冒烟已完成：旧知识库和已解析文档读取均为 200，changes 明确 503；随后已恢复新功能、TaskFlow 直连并停止故障代理。用户批准的临时模型入口已关闭，原 Windows 回环 Ollama 保留。完整运行与浏览器原始档案保存在验收者本机的 `docs/resume_jd_20261019/acceptance_results_20261020.md`，不作为仓库内链接。
+
+## ChangePilot 展示更名与 fork 工作流
+
+产品页面标题、favicon、导航、登录和应用助手等产品名称统一为 ChangePilot。品牌与仓库链接集中于 `frontend/src/config/branding.ts`。登录页面描述版本化依据、注册检查和人工交接；上游官网入口明确标注“基于 WeKnora”。
+
+Go module、`weknora` CLI 命令、API、存储键、环境变量、WeKnora Cloud 供应商与上游标准沙箱模板名称保持兼容。原 README 全文保存到 `README.upstream.md`；首页单列上游能力、本项目新增与 TaskFlow 客户端来源。
+
+更名后的 Vue TypeScript 检查、15/15 i18n 审核和 Vite 生产构建通过。完整服务源码没有行为变化，复用前述 Linux 构建与集成证据；本轮没有重编后端。大型上游 chunk 警告仍存在。
+
+GitHub 的 13 份 workflow YAML 已实际解析。10 个上游 Docker、PyPI、npm、Lite Release/Homebrew 与定时 drift job 设置 `github.repository == 'Tencent/WeKnora'` 精确守卫，个人仓库 main 推送不会向这些上游发布目标外发；DSH 定时测试也只在上游自动运行。App、Frontend、CLI、Helm、Anydoc、DocReader 等常规检查保留。外部服务器 CLI E2E 在个人仓库仅可显式手动触发，仍需操作者配置测试凭据。

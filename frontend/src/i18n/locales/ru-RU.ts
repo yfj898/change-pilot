@@ -1,6 +1,8 @@
 import { changeWorkspaceEN } from '../changeWorkspace'
+import { productBrandingEN } from '../productBranding'
 
 export default {
+  brand: productBrandingEN,
   changes: changeWorkspaceEN,
   modelCatalog: {
     "title": "Каталог моделей",
@@ -541,7 +543,7 @@ export default {
   },
   integrations: {
     cli: {
-      title: 'WeKnora CLI',
+      title: 'ChangePilot CLI',
       subtitle: 'Управляйте базами знаний и документами, ищите информацию и задавайте вопросы из терминала. Подключайте скрипты и инструменты ИИ через CLI или MCP.',
       docs: 'Документация CLI',
       docsHint: 'Установка и полный справочник команд',
@@ -778,14 +780,14 @@ export default {
       directWarning: 'Прямой ID доверяет заголовку вызывающей стороны. Используйте только для доверенных server-to-server вызовов.',
       directWarningDetail: 'Любой, у кого есть API key, может подменить заголовок ID пользователя, выдать себя за другого внешнего пользователя и переиспользовать или перехватить его авторизацию MCP OAuth. Не используйте в браузере или ненадёжных клиентах; для пользовательских приложений выбирайте подписанный token.',
       signedRecommended: 'Рекомендуется для пользовательских приложений: ваш backend подписывает краткоживущий HS256 JWT для внешнего пользователя.',
-      signedFlowDetail: 'HMAC secret храните только в WeKnora и на доверенном backend — не передавайте в запросах и не отдавайте браузеру. В заголовке запроса передаётся JWT, подписанный этим secret (меняется при каждой выдаче или после истечения), а не сам secret. JWT должен содержать sub (ID внешнего пользователя), tenant_id, aud=weknora и exp (не более 24 ч).',
+      signedFlowDetail: 'HMAC secret храните только в ChangePilot и на доверенном backend — не передавайте в запросах и не отдавайте браузеру. В заголовке запроса передаётся JWT, подписанный этим secret (меняется при каждой выдаче или после истечения), а не сам secret. JWT должен содержать sub (ID внешнего пользователя), tenant_id, aud=weknora и exp (не более 24 ч).',
       directHeader: 'Заголовок ID пользователя',
       requireDirectHeader: 'Требовать заголовок ID пользователя',
       requireDirectHeaderDesc: 'Если включено, запросы без заголовка ID пользователя отклоняются; иначе все запросы обрабатываются как единое пространство без различия конечных пользователей.',
       tokenHeader: 'Заголовок token',
       tokenHeaderDesc: 'Клиент передаёт JWT, подписанный backend, в этом фиксированном заголовке.',
       hmacSecret: 'HMAC secret',
-      hmacSecretDesc: 'Тот же secret, что в WeKnora; только для подписи JWT на backend — не отправляйте его в заголовке запроса.',
+      hmacSecretDesc: 'Тот же secret, что в ChangePilot; только для подписи JWT на backend — не отправляйте его в заголовке запроса.',
       secretConfigured: 'Secret настроен (повторно не показывается); введите новое значение для ротации',
       secretSavedCopyHint: 'Secret сохранён. Скопируйте его в backend сейчас — после ухода со страницы просмотреть его будет нельзя.',
       generateSecret: 'Сгенерировать secret',
@@ -2371,7 +2373,7 @@ export default {
     askUser: 'Вопрос пользователю'
   },
   assistant: {
-    title: 'Ассистент WeKnora',
+    title: 'Ассистент ChangePilot',
     newConversation: 'Новый диалог',
     history: 'История диалогов',
     untitledConversation: 'Диалог без названия',
@@ -2385,7 +2387,7 @@ export default {
     },
     welcomeTitle: 'Чем помочь?',
     agentWelcomeDesc: 'Проверьте настройки этого агента, смените модель или узнайте, в каких базах знаний он может искать.',
-    welcomeDesc: 'Я отвечаю на вопросы о WeKnora, а также проверяю и обрабатываю разбор документов, активность баз знаний и проблемы Wiki в вашем пространстве, а также создаю и настраиваю агентов. Спрашивать ли подтверждение перед изменением, зависит от уровня доступа под полем ввода.',
+    welcomeDesc: 'Я отвечаю на вопросы о ChangePilot, а также проверяю и обрабатываю разбор документов, активность баз знаний и проблемы Wiki в вашем пространстве, а также создаю и настраиваю агентов. Спрашивать ли подтверждение перед изменением, зависит от уровня доступа под полем ввода.',
     startFailed: 'Не удалось запустить ассистента. Попробуйте ещё раз.',
     askAboutDocument: 'Спросить: {name}',
     askAboutAnswer: 'Спросить {name} об этом ответе',
@@ -2463,7 +2465,7 @@ export default {
       documentSummary: 'Кратко изложи этот документ',
       failedDocuments: 'Какие документы этой базы знаний не удалось разобрать?',
       recentActivity: 'Что недавно менялось в этой базе знаний?',
-      formats: 'Какие форматы документов поддерживает WeKnora?',
+      formats: 'Какие форматы документов поддерживает ChangePilot?',
       createWiki: 'Как создать базу знаний Wiki?',
       agents: 'Какие у меня есть агенты и какие модели они используют?',
       messageSources: 'На чём основан этот ответ?',
@@ -5350,7 +5352,7 @@ export default {
       systemActor: 'Система',
       actorWithAPIKey: '{actor} · API Key · {name}',
       actorAPIKey: 'API Key · {name}',
-      viaAssistant: 'Через ассистента WeKnora',
+      viaAssistant: 'Через ассистента ChangePilot',
       knowledgeBase: 'База знаний',
       countItems: '{count} элем.',
       titleWithCount: '{title} и ещё {count}',
@@ -5503,7 +5505,7 @@ export default {
     welcomeMessageDesc: 'Показывается во встроенном чате до первого сообщения посетителя; оставьте пустым, чтобы скрыть',
     showSuggestedQuestions: 'Рекомендуемые вопросы',
     showSuggestedQuestionsDesc: 'Показывать быстрые вопросы до первого сообщения посетителя — из настроек агента и связанных баз знаний',
-    originsHint: 'Укажите сайты, которым разрешено встраивание (A), а не адрес WeKnora (B). Один полный Origin на строку, например https://shop.example.com; минимум один. Поддерживается *.example.com.',
+    originsHint: 'Укажите сайты, которым разрешено встраивание (A), а не адрес ChangePilot (B). Один полный Origin на строку, например https://shop.example.com; минимум один. Поддерживается *.example.com.',
     originsRequired: 'Укажите хотя бы один разрешённый домен',
     originsInvalid: 'Неверный домен: {origin}',
     originsWildcardProd: 'В production запрещён wildcard \'*\'',
@@ -5562,7 +5564,7 @@ export default {
     allowFileUploadDesc: 'При включении посетители видят кнопку загрузки изображений в поле ввода. Кнопка появляется только если у привязанного агента включена загрузка изображений.',
     webhookUrl: 'Webhook URL',
     webhookUrlPlaceholder: 'https://your-server.example.com/weknora/embed-events',
-    webhookUrlDesc: 'Optional. WeKnora POSTs message_sent / message_received events to this HTTPS endpoint.',
+    webhookUrlDesc: 'Optional. ChangePilot POSTs message_sent / message_received events to this HTTPS endpoint.',
     webhookSecret: 'Webhook secret',
     webhookSecretPlaceholder: 'HMAC-SHA256 secret (X-WeKnora-Signature header)',
     webhookSecretKeep: 'Leave blank to keep the saved secret',
@@ -5665,7 +5667,7 @@ export default {
     }
   },
   createChat: {
-    title: 'Привет, я WeKnora — ваши знания всегда под рукой',
+    title: 'Привет, я ChangePilot — ваши знания всегда под рукой',
     newSessionTitle: 'Новая сессия',
     openProject: 'Выбрать проект',
     clearProject: 'Снять привязку',
@@ -5974,11 +5976,11 @@ export default {
     haveAccount: 'Уже есть аккаунт?',
     backToLogin: 'Вернуться ко входу',
     loginHint: 'Войдите, чтобы продолжить, или создайте аккаунт ниже, если вы впервые здесь.',
-    firstTime: 'Впервые в WeKnora?',
+    firstTime: 'Впервые в ChangePilot?',
     registerSuccess: 'Регистрация завершена. Войдите в систему',
     registerFailed: 'Ошибка регистрации',
     subtitle: 'RAG, ReAct-агент и Wiki — корпоративный фреймворк знаний на основе больших моделей',
-    registerSubtitle: 'Создайте аккаунт и начните работу с WeKnora',
+    registerSubtitle: 'Создайте аккаунт и начните работу с ChangePilot',
     emailPlaceholder: 'Введите адрес электронной почты',
     passwordPlaceholder: 'Введите пароль',
     confirmPasswordPlaceholder: 'Введите пароль ещё раз',
@@ -6267,7 +6269,7 @@ export default {
     title: 'Ключи песочницы',
     host: {
       title: 'Переменные среды',
-      description: 'Личные ключи для навыков на этом компьютере, а не системные или деплой-настройки WeKnora.',
+      description: 'Личные ключи для навыков на этом компьютере, а не системные или деплой-настройки ChangePilot.',
       helpAria: 'Справка по переменным среды',
       introRuntimeBody: 'Подставляются, когда навык выполняется на этом компьютере. Значение можно передать и прямо в диалоге. После сохранения открытый текст больше не показывается.',
       loadFailed: 'Не удалось загрузить переменные среды.',
@@ -6276,7 +6278,7 @@ export default {
       nameInvalid: 'Это имя нельзя использовать. Зарезервированные имена (например PATH или начинающиеся с WEKNORA_) отклоняются.',
       deleteConfirm: 'Удалить {name}? Дальнейшие запуски на этом компьютере больше не будут его получать.',
     },
-    description: 'Личные ключи для навыков и песочниц, а не системные или деплой-настройки WeKnora.',
+    description: 'Личные ключи для навыков и песочниц, а не системные или деплой-настройки ChangePilot.',
     helpAria: 'Справка по ключам песочницы',
     introPersonalTitle: 'Только ваши',
     introPersonalBody: 'Подставляются только в ваши диалоги и запуски. Другие участники их не видят, и их значения не заменяют ваши.',
@@ -6490,12 +6492,12 @@ export default {
       backendDescriptions: {
         cube: 'Self-hosted MicroVM cluster for private or on-premises deployments',
         e2b: 'Managed MicroVM service or an E2B-compatible deployment',
-        docker: 'Держит долгоживущий контейнер на каждую сессию на этом хосте WeKnora; скрипты и файлы остаются в том же контейнере',
+        docker: 'Держит долгоживущий контейнер на каждую сессию на этом хосте ChangePilot; скрипты и файлы остаются в том же контейнере',
       },
       dockerDisabledAlert: 'Песочница Docker на этом развёртывании не включена',
       dockerDisabledHint: 'Локальный docker.sock равносилен root на хосте. Для частной одноузловой установки системный администратор может включить это в «Настройки → Системные настройки → Сетевая безопасность».',
       dockerDisabledCard: 'Песочница Docker отключена на этом развёртывании; эта конфигурация больше не создаёт контейнеры',
-      dockerHostRisk: 'Пустое значение или unix:// использует демон Docker на машине WeKnora — это равносильно root на этой машине. Только для частной одноузловой установки. Если несколько пространств делят один хост, используйте Cube или E2B. Удалённый tcp:// требует каталог TLS-сертификатов.',
+      dockerHostRisk: 'Пустое значение или unix:// использует демон Docker на машине ChangePilot — это равносильно root на этой машине. Только для частной одноузловой установки. Если несколько пространств делят один хост, используйте Cube или E2B. Удалённый tcp:// требует каталог TLS-сертификатов.',
       addConfig: 'Добавить песочницу',
       viewClusterGuide: 'Cluster setup guide',
       configName: 'Config name',
@@ -6691,9 +6693,9 @@ export default {
       dockerHost: 'Docker daemon endpoint',
       dockerHostHelp: 'Empty follows the local docker CLI (DOCKER_HOST or the current docker context), so you do not have to type /var/run/docker.sock. For a remote daemon use tcp://host:2376, fill in the TLS certificate directory, and turn on "allow private endpoints" for RFC1918 addresses.',
       dockerTlsCertPath: 'TLS certificate directory',
-      dockerTlsCertPathHelp: 'Directory on the WeKnora host holding ca.pem, cert.pem and key.pem. Required for a remote daemon; certificates are mounted by the deployment, never stored here.',
+      dockerTlsCertPathHelp: 'Directory on the ChangePilot host holding ca.pem, cert.pem and key.pem. Required for a remote daemon; certificates are mounted by the deployment, never stored here.',
       dockerIdleTtl: 'Idle reclaim (seconds)',
-      dockerIdleTtlHelp: 'The Docker daemon has no idle timeout of its own. A container that runs no command for this long is reclaimed by WeKnora and rebuilt when the session continues. Empty means 1800 seconds.',
+      dockerIdleTtlHelp: 'The Docker daemon has no idle timeout of its own. A container that runs no command for this long is reclaimed by ChangePilot and rebuilt when the session continues. Empty means 1800 seconds.',
       dockerCpuLimit: 'CPU cores',
       dockerCpuLimitHelp: 'CPU cores available to one sandbox; 0 uses the built-in default.',
       dockerMemoryLimit: 'Memory limit (MB)',
@@ -8301,10 +8303,10 @@ export default {
       },
       knowledge: {
         title: 'Создайте базу знаний',
-        desc: 'С этого всё начинается: загружайте документы, веб-страницы или FAQ, и WeKnora автоматически разберёт и проиндексирует их. Нажмите здесь, чтобы открыть базы знаний.'
+        desc: 'С этого всё начинается: загружайте документы, веб-страницы или FAQ, и ChangePilot автоматически разберёт и проиндексирует их. Нажмите здесь, чтобы открыть базы знаний.'
       },
       welcome: {
-        title: 'Добро пожаловать в WeKnora',
+        title: 'Добро пожаловать в ChangePilot',
         desc: 'Несколько простых шагов познакомят вас с базами знаний, чатом и агентами. Нажмите «Далее», чтобы начать.'
       }
     }

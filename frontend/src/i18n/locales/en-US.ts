@@ -1,6 +1,8 @@
 import { changeWorkspaceEN } from '../changeWorkspace'
+import { productBrandingEN } from '../productBranding'
 
 export default {
+  brand: productBrandingEN,
   changes: changeWorkspaceEN,
   modelCatalog: {
     "title": "Model catalog",
@@ -394,12 +396,12 @@ export default {
     reopen: 'Product tour',
     steps: {
       welcome: {
-        title: 'Welcome to WeKnora',
+        title: 'Welcome to ChangePilot',
         desc: 'A few quick steps to get you familiar with knowledge bases, chat and agents. Click "Next" to begin.'
       },
       knowledge: {
         title: 'Create your knowledge base',
-        desc: 'Everything starts here: upload documents, web pages or FAQs and WeKnora parses and indexes them automatically. Click here to open knowledge bases.'
+        desc: 'Everything starts here: upload documents, web pages or FAQs and ChangePilot parses and indexes them automatically. Click here to open knowledge bases.'
       },
       chat: {
         title: 'Start an AI chat',
@@ -1520,12 +1522,12 @@ export default {
       backendDescriptions: {
         cube: 'Self-hosted MicroVM cluster for private or on-premises deployments',
         e2b: 'Managed MicroVM service or an E2B-compatible deployment',
-        docker: 'Keep a long-lived container per session on this WeKnora host; scripts and files stay in that container',
+        docker: 'Keep a long-lived container per session on this ChangePilot host; scripts and files stay in that container',
       },
       dockerDisabledAlert: 'Docker sandbox is not enabled on this deployment',
       dockerDisabledHint: 'A local docker.sock is equivalent to root on the host. For a single-machine private install, a system admin can enable it under Settings → System settings → Network security.',
       dockerDisabledCard: 'Docker sandbox is disabled on this deployment; this config will not create containers',
-      dockerHostRisk: 'Empty or unix:// uses the Docker daemon on the WeKnora host, which is equivalent to root on that machine. Use this only for a private single-node install. Prefer Cube or E2B when multiple workspaces share a host. Remote tcp:// endpoints require a TLS certificate directory.',
+      dockerHostRisk: 'Empty or unix:// uses the Docker daemon on the ChangePilot host, which is equivalent to root on that machine. Use this only for a private single-node install. Prefer Cube or E2B when multiple workspaces share a host. Remote tcp:// endpoints require a TLS certificate directory.',
       addConfig: 'Add sandbox',
       viewClusterGuide: 'Cluster setup guide',
       configName: 'Config name',
@@ -1721,9 +1723,9 @@ export default {
       dockerHost: 'Docker daemon endpoint',
       dockerHostHelp: 'Empty follows the local docker CLI (DOCKER_HOST or the current docker context), so you do not have to type /var/run/docker.sock. For a remote daemon use tcp://host:2376, fill in the TLS certificate directory, and turn on "allow private endpoints" for RFC1918 addresses.',
       dockerTlsCertPath: 'TLS certificate directory',
-      dockerTlsCertPathHelp: 'Directory on the WeKnora host holding ca.pem, cert.pem and key.pem. Required for a remote daemon; certificates are mounted by the deployment, never stored here.',
+      dockerTlsCertPathHelp: 'Directory on the ChangePilot host holding ca.pem, cert.pem and key.pem. Required for a remote daemon; certificates are mounted by the deployment, never stored here.',
       dockerIdleTtl: 'Idle reclaim (seconds)',
-      dockerIdleTtlHelp: 'The Docker daemon has no idle timeout of its own. A container that runs no command for this long is reclaimed by WeKnora and rebuilt when the session continues. Empty means 1800 seconds.',
+      dockerIdleTtlHelp: 'The Docker daemon has no idle timeout of its own. A container that runs no command for this long is reclaimed by ChangePilot and rebuilt when the session continues. Empty means 1800 seconds.',
       dockerCpuLimit: 'CPU cores',
       dockerCpuLimitHelp: 'CPU cores available to one sandbox; 0 uses the built-in default.',
       dockerMemoryLimit: 'Memory limit (MB)',
@@ -2458,7 +2460,7 @@ export default {
     title: 'Sandbox secrets',
     host: {
       title: 'Environment variables',
-      description: 'Personal keys for skills on this computer, not WeKnora system or deployment settings.',
+      description: 'Personal keys for skills on this computer, not ChangePilot system or deployment settings.',
       helpAria: 'About environment variables',
       introRuntimeBody: 'Injected when a skill runs on this computer. You can also provide a value in chat. Saved values are not shown again.',
       loadFailed: 'Could not load environment variables.',
@@ -2467,7 +2469,7 @@ export default {
       nameInvalid: 'This name cannot be used. Reserved names (for example PATH, or names starting with WEKNORA_) are rejected.',
       deleteConfirm: 'Delete {name}? Later runs on this computer will no longer include it.',
     },
-    description: 'Personal keys for skills and sandboxes, not WeKnora system or deployment settings.',
+    description: 'Personal keys for skills and sandboxes, not ChangePilot system or deployment settings.',
     helpAria: 'About sandbox secrets',
     introPersonalTitle: 'Yours only',
     introPersonalBody: 'Injected into your own chats and runs. Other members cannot see them, and theirs will not replace yours.',
@@ -2698,11 +2700,11 @@ export default {
     haveAccount: 'Already have an account?',
     backToLogin: 'Back to Login',
     loginHint: 'Sign in to continue, or create an account below if this is your first time.',
-    firstTime: 'New to WeKnora?',
+    firstTime: 'New to ChangePilot?',
     registerSuccess: 'Registration successful. Please sign in',
     registerFailed: 'Registration failed',
     subtitle: 'RAG Q&A, ReAct Agent and Wiki — an LLM-powered enterprise knowledge framework',
-    registerSubtitle: 'Create your account and start using WeKnora',
+    registerSubtitle: 'Create your account and start using ChangePilot',
     emailPlaceholder: 'Enter email address',
     passwordPlaceholder: 'Enter password',
     confirmPasswordPlaceholder: 'Enter password again',
@@ -3020,7 +3022,7 @@ export default {
     goToAgentSettings: 'Go to agent settings'
   },
   createChat: {
-    title: 'Hi, I am WeKnora — your knowledge, within reach',
+    title: 'Hi, I am ChangePilot — your knowledge, within reach',
     newSessionTitle: 'New Session',
     openProject: 'Select project',
     clearProject: 'Clear',
@@ -3132,7 +3134,7 @@ export default {
     welcomeMessageDesc: 'Shown in the embed chat before the visitor sends their first message; leave blank to hide',
     showSuggestedQuestions: 'Suggested questions',
     showSuggestedQuestionsDesc: 'Show starter prompts before the first visitor message, from agent config and linked knowledge bases',
-    originsHint: 'Enter the host websites allowed to embed this channel (A), not the WeKnora address (B). One full origin per line, e.g. https://shop.example.com; at least one required. Supports *.example.com.',
+    originsHint: 'Enter the host websites allowed to embed this channel (A), not the ChangePilot address (B). One full origin per line, e.g. https://shop.example.com; at least one required. Supports *.example.com.',
     originsRequired: 'At least one allowed origin is required',
     originsInvalid: 'Invalid origin: {origin}',
     originsWildcardProd: 'Wildcard origin \'*\' is not allowed in production',
@@ -3191,7 +3193,7 @@ export default {
     allowFileUploadDesc: 'When enabled, visitors can upload images and document attachments. Requires the bound agent to support image upload.',
     webhookUrl: 'Webhook URL',
     webhookUrlPlaceholder: 'https://your-server.example.com/weknora/embed-events',
-    webhookUrlDesc: 'Optional. WeKnora POSTs message_sent / message_received events to this HTTPS endpoint.',
+    webhookUrlDesc: 'Optional. ChangePilot POSTs message_sent / message_received events to this HTTPS endpoint.',
     webhookSecret: 'Webhook secret',
     webhookSecretPlaceholder: 'HMAC-SHA256 secret (X-WeKnora-Signature header)',
     webhookSecretKeep: 'Leave blank to keep the saved secret',
@@ -3265,7 +3267,7 @@ export default {
       systemActor: 'System',
       actorWithAPIKey: '{actor} · API Key · {name}',
       actorAPIKey: 'API Key · {name}',
-      viaAssistant: 'Via WeKnora Assistant',
+      viaAssistant: 'Via ChangePilot Assistant',
       knowledgeBase: 'Knowledge base',
       countItems: '{count} items',
       titleWithCount: '{title} and {count} more',
@@ -6143,7 +6145,7 @@ export default {
       videoNotSupported: 'Your browser does not support video playback'
     },
     assistant: {
-      title: 'WeKnora Assistant',
+      title: 'ChangePilot Assistant',
       newConversation: 'New conversation',
       history: 'Conversation history',
       untitledConversation: 'Untitled conversation',
@@ -6157,7 +6159,7 @@ export default {
       },
       welcomeTitle: 'How can I help?',
       agentWelcomeDesc: 'Check this agent’s configuration, change its model or see which knowledge bases it can search.',
-      welcomeDesc: 'Ask how WeKnora works, or have me check and handle document parsing, knowledge base activity and Wiki issues in your workspace, or create and configure agents. Whether I ask before a change depends on the access level below the input box.',
+      welcomeDesc: 'Ask how ChangePilot works, or have me check and handle document parsing, knowledge base activity and Wiki issues in your workspace, or create and configure agents. Whether I ask before a change depends on the access level below the input box.',
       startFailed: 'Failed to start the assistant. Please try again.',
       askAboutDocument: 'Ask {name}',
       askAboutAnswer: 'Ask {name} about this answer',
@@ -6235,7 +6237,7 @@ export default {
       documentSummary: 'Summarize this document',
       failedDocuments: 'Which documents in this knowledge base failed to parse?',
       recentActivity: 'What changed in this knowledge base recently?',
-      formats: 'Which document formats does WeKnora support?',
+      formats: 'Which document formats does ChangePilot support?',
       createWiki: 'How do I create a Wiki knowledge base?',
       agents: 'Which agents do I have, and which models do they use?',
       messageSources: 'What is this answer based on?',
@@ -7735,7 +7737,7 @@ export default {
   },
   integrations: {
     cli: {
-      title: 'WeKnora CLI',
+      title: 'ChangePilot CLI',
       subtitle: 'Manage knowledge bases and documents, search content, and ask questions from your terminal. Connect scripts and AI tools through the CLI or MCP.',
       docs: 'CLI documentation',
       docsHint: 'Installation and complete command reference',
@@ -7967,14 +7969,14 @@ export default {
       directWarning: 'Direct user ID trusts the caller-supplied header. Use only for trusted server-to-server calls.',
       directWarningDetail: 'Anyone with the API key can change the user ID header to impersonate another external user and reuse or hijack that user\'s MCP OAuth authorization. Do not use this from browsers or untrusted clients; use Signed token for end-user apps.',
       signedRecommended: 'Recommended for user-facing apps: your backend signs a short-lived HS256 JWT for the external user.',
-      signedFlowDetail: 'Keep the HMAC secret only on WeKnora and your trusted backend—never put it in requests or ship it to browsers. The request header carries the JWT string signed with that secret (it changes on each issuance or after expiry), not the secret itself. JWT must include sub (external user ID), tenant_id, aud=weknora, and exp (max 24h lifetime).',
+      signedFlowDetail: 'Keep the HMAC secret only on ChangePilot and your trusted backend—never put it in requests or ship it to browsers. The request header carries the JWT string signed with that secret (it changes on each issuance or after expiry), not the secret itself. JWT must include sub (external user ID), tenant_id, aud=weknora, and exp (max 24h lifetime).',
       directHeader: 'User ID header',
       requireDirectHeader: 'Require user ID header',
       requireDirectHeaderDesc: 'When enabled, API Key requests without the user ID header are rejected; when disabled, all requests are treated as the whole workspace with no per-user distinction.',
       tokenHeader: 'Token header',
       tokenHeaderDesc: 'Clients send the backend-signed JWT in this fixed header.',
       hmacSecret: 'HMAC secret',
-      hmacSecretDesc: 'Same secret stored in WeKnora; used only on your backend to sign JWTs—never send it as a request header.',
+      hmacSecretDesc: 'Same secret stored in ChangePilot; used only on your backend to sign JWTs—never send it as a request header.',
       secretConfigured: 'Secret configured (not shown again); enter a new value to rotate',
       secretSavedCopyHint: 'Secret saved. Copy it to your backend now — you will not be able to view it again after leaving this page.',
       generateSecret: 'Generate secret',

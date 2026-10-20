@@ -1,6 +1,8 @@
 import { changeWorkspaceEN } from '../changeWorkspace'
+import { productBrandingEN } from '../productBranding'
 
 export default {
+  brand: productBrandingEN,
   changes: changeWorkspaceEN,
   modelCatalog: {
     "title": "모델 카탈로그",
@@ -541,7 +543,7 @@ export default {
   },
   integrations: {
     cli: {
-      title: 'WeKnora CLI',
+      title: 'ChangePilot CLI',
       subtitle: '터미널에서 지식 베이스와 문서를 관리하고, 콘텐츠를 검색하고, 질문하세요. CLI 또는 MCP로 스크립트와 AI 도구를 연결할 수 있습니다.',
       docs: 'CLI 문서 보기',
       docsHint: '설치 안내 및 전체 명령어 참조',
@@ -778,14 +780,14 @@ export default {
       directWarning: '직접 사용자 ID 모드는 요청 헤더를 신뢰합니다. 신뢰된 서버 간 호출에만 사용하세요.',
       directWarningDetail: 'API Key를 가진 호출자는 사용자 ID 헤더를 바꿔 다른 외부 사용자를 가장하고 해당 사용자의 MCP OAuth 인증을 공유하거나 탈취할 수 있습니다. 브라우저나 신뢰할 수 없는 클라이언트에는 사용하지 마세요. 최종 사용자 앱에는 서명 토큰을 사용하세요.',
       signedRecommended: '사용자 대상 앱에 권장: 비즈니스 백엔드가 외부 사용자용 단기 HS256 JWT를 서명합니다.',
-      signedFlowDetail: 'HMAC secret은 WeKnora와 신뢰할 수 있는 백엔드에만 보관하세요. 요청에 넣거나 브라우저에 배포하지 마세요. 요청 헤더에는 secret이 아니라 해당 secret으로 서명한 JWT 문자열을 넣습니다(발급마다 또는 만료 후 변경). JWT에는 sub(외부 사용자 ID), tenant_id, aud=weknora, exp(최대 24시간)가 필요합니다.',
+      signedFlowDetail: 'HMAC secret은 ChangePilot와 신뢰할 수 있는 백엔드에만 보관하세요. 요청에 넣거나 브라우저에 배포하지 마세요. 요청 헤더에는 secret이 아니라 해당 secret으로 서명한 JWT 문자열을 넣습니다(발급마다 또는 만료 후 변경). JWT에는 sub(외부 사용자 ID), tenant_id, aud=weknora, exp(최대 24시간)가 필요합니다.',
       directHeader: '사용자 ID 헤더',
       requireDirectHeader: '사용자 ID 헤더 필수',
       requireDirectHeaderDesc: '켜면 사용자 ID 헤더가 없는 API Key 요청을 거부하고, 끄면 워크스페이스 전체로 통일 처리하며 개별 사용자를 구분하지 않습니다.',
       tokenHeader: '토큰 헤더',
       tokenHeaderDesc: '클라이언트는 이 고정 헤더에 백엔드가 서명한 JWT를 전달합니다.',
       hmacSecret: 'HMAC secret',
-      hmacSecretDesc: 'WeKnora에 저장된 것과 동일한 secret. 백엔드에서 JWT 서명에만 사용하며 요청 헤더로 보내지 않습니다.',
+      hmacSecretDesc: 'ChangePilot에 저장된 것과 동일한 secret. 백엔드에서 JWT 서명에만 사용하며 요청 헤더로 보내지 않습니다.',
       secretConfigured: 'Secret configured (not shown again); enter a new value to rotate',
       secretSavedCopyHint: 'Secret saved. Copy it to your backend now — you will not be able to view it again after leaving this page.',
       generateSecret: 'Secret 생성',
@@ -2371,7 +2373,7 @@ export default {
     askUser: '사용자에게 질문'
   },
   assistant: {
-    title: 'WeKnora 어시스턴트',
+    title: 'ChangePilot 어시스턴트',
     newConversation: '새 대화',
     history: '대화 기록',
     untitledConversation: '제목 없는 대화',
@@ -2385,7 +2387,7 @@ export default {
     },
     welcomeTitle: '무엇을 도와드릴까요?',
     agentWelcomeDesc: '이 에이전트의 설정을 확인하고, 모델을 변경하거나 검색할 수 있는 지식 베이스를 확인할 수 있습니다.',
-    welcomeDesc: 'WeKnora 사용법을 안내하고, 워크스페이스의 문서 파싱, 지식 베이스 활동, Wiki 문제를 확인하고 처리하며, 에이전트를 만들고 설정할 수도 있습니다. 변경 전에 확인을 요청할지는 입력창 아래의 권한 수준에 따라 정해집니다.',
+    welcomeDesc: 'ChangePilot 사용법을 안내하고, 워크스페이스의 문서 파싱, 지식 베이스 활동, Wiki 문제를 확인하고 처리하며, 에이전트를 만들고 설정할 수도 있습니다. 변경 전에 확인을 요청할지는 입력창 아래의 권한 수준에 따라 정해집니다.',
     startFailed: '어시스턴트를 시작하지 못했습니다. 다시 시도해 주세요.',
     askAboutDocument: '{name}에게 묻기',
     askAboutAnswer: '이 답변에 대해 {name}에게 묻기',
@@ -2463,7 +2465,7 @@ export default {
       documentSummary: '이 문서를 요약해 줘',
       failedDocuments: '이 지식 베이스에서 파싱에 실패한 문서는?',
       recentActivity: '이 지식 베이스에 최근 어떤 변경이 있었나요?',
-      formats: 'WeKnora는 어떤 문서 형식을 지원하나요?',
+      formats: 'ChangePilot는 어떤 문서 형식을 지원하나요?',
       createWiki: 'Wiki 지식 베이스는 어떻게 만드나요?',
       agents: '어떤 에이전트가 있고, 각각 어떤 모델을 쓰나요?',
       messageSources: '이 답변의 근거는 무엇인가요?',
@@ -5350,7 +5352,7 @@ export default {
       systemActor: '시스템',
       actorWithAPIKey: '{actor} · API Key · {name}',
       actorAPIKey: 'API Key · {name}',
-      viaAssistant: 'WeKnora 어시스턴트 경유',
+      viaAssistant: 'ChangePilot 어시스턴트 경유',
       knowledgeBase: '지식 베이스',
       countItems: '{count}개 항목',
       titleWithCount: '{title} 외 {count}개',
@@ -5503,7 +5505,7 @@ export default {
     welcomeMessageDesc: '방문자가 임베드 채팅을 열고 첫 메시지를 보내기 전에 표시됩니다. 비우면 표시하지 않습니다',
     showSuggestedQuestions: '추천 질문',
     showSuggestedQuestionsDesc: '방문자 첫 메시지 전에 빠른 질문을 표시합니다(에이전트 설정 및 연결된 지식베이스에서 가져옴)',
-    originsHint: 'WeKnora 주소(B)가 아닌 임베드를 허용할 호스트 웹사이트(A)를 입력하세요. 한 줄에 하나의 Origin(예: https://shop.example.com), 최소 1개. *.example.com 지원.',
+    originsHint: 'ChangePilot 주소(B)가 아닌 임베드를 허용할 호스트 웹사이트(A)를 입력하세요. 한 줄에 하나의 Origin(예: https://shop.example.com), 최소 1개. *.example.com 지원.',
     originsRequired: '허용 도메인을 최소 1개 입력하세요',
     originsInvalid: '잘못된 도메인: {origin}',
     originsWildcardProd: '프로덕션에서는 와일드카드 \'*\'를 사용할 수 없습니다',
@@ -5562,7 +5564,7 @@ export default {
     allowFileUploadDesc: '활성화하면 방문자 입력창에 이미지 업로드 버튼이 표시됩니다. 연결된 에이전트에서 이미지 업로드가 활성화된 경우에만 버튼이 나타납니다.',
     webhookUrl: 'Webhook URL',
     webhookUrlPlaceholder: 'https://your-server.example.com/weknora/embed-events',
-    webhookUrlDesc: 'Optional. WeKnora POSTs message_sent / message_received events to this HTTPS endpoint.',
+    webhookUrlDesc: 'Optional. ChangePilot POSTs message_sent / message_received events to this HTTPS endpoint.',
     webhookSecret: 'Webhook secret',
     webhookSecretPlaceholder: 'HMAC-SHA256 secret (X-WeKnora-Signature header)',
     webhookSecretKeep: 'Leave blank to keep the saved secret',
@@ -5665,7 +5667,7 @@ export default {
     }
   },
   createChat: {
-    title: '안녕하세요, WeKnora입니다 — 당신의 지식을 손끝에',
+    title: '안녕하세요, ChangePilot입니다 — 당신의 지식을 손끝에',
     newSessionTitle: '새 세션',
     openProject: '프로젝트 선택',
     clearProject: '바인딩 해제',
@@ -5974,11 +5976,11 @@ export default {
     haveAccount: '이미 계정이 있으신가요?',
     backToLogin: '로그인으로 돌아가기',
     loginHint: '로그인하여 계속하세요. 처음이시라면 아래에서 계정을 만드세요.',
-    firstTime: 'WeKnora가 처음이신가요?',
+    firstTime: 'ChangePilot가 처음이신가요?',
     registerSuccess: '가입이 완료되었습니다. 로그인해주세요',
     registerFailed: '가입 실패',
     subtitle: 'RAG Q&A, ReAct 에이전트, Wiki 지식베이스 — 대규모 언어 모델 기반 엔터프라이즈 지식 프레임워크',
-    registerSubtitle: '계정을 만들고 WeKnora를 시작하세요',
+    registerSubtitle: '계정을 만들고 ChangePilot를 시작하세요',
     emailPlaceholder: '이메일 주소 입력',
     passwordPlaceholder: '비밀번호 입력',
     confirmPasswordPlaceholder: '비밀번호 다시 입력',
@@ -6267,7 +6269,7 @@ export default {
     title: '샌드박스 키',
     host: {
       title: '환경 변수',
-      description: '이 컴퓨터의 스킬에 쓰는 개인 키이며, WeKnora 시스템이나 배포 설정이 아닙니다.',
+      description: '이 컴퓨터의 스킬에 쓰는 개인 키이며, ChangePilot 시스템이나 배포 설정이 아닙니다.',
       helpAria: '환경 변수 설명',
       introRuntimeBody: '스킬이 이 컴퓨터에서 실행될 때 주입됩니다. 대화 중에 바로 제공할 수도 있습니다. 저장 후에는 평문을 다시 보여 주지 않습니다.',
       loadFailed: '환경 변수를 불러오지 못했습니다.',
@@ -6276,7 +6278,7 @@ export default {
       nameInvalid: '이 이름은 사용할 수 없습니다. 예약된 이름(예: PATH, WEKNORA_로 시작하는 이름)은 거부됩니다.',
       deleteConfirm: '{name}을(를) 삭제할까요? 이후 이 컴퓨터에서 실행할 때 더 이상 포함되지 않습니다.',
     },
-    description: '스킬과 샌드박스에 쓰는 개인 키이며, WeKnora 시스템이나 배포 설정이 아닙니다.',
+    description: '스킬과 샌드박스에 쓰는 개인 키이며, ChangePilot 시스템이나 배포 설정이 아닙니다.',
     helpAria: '샌드박스 키 설명',
     introPersonalTitle: '나만의 값',
     introPersonalBody: '내 대화와 실행에만 주입됩니다. 다른 구성원은 볼 수 없고, 그들의 값이 내 값을 대체하지도 않습니다.',
@@ -6490,12 +6492,12 @@ export default {
       backendDescriptions: {
         cube: 'Self-hosted MicroVM cluster for private or on-premises deployments',
         e2b: 'Managed MicroVM service or an E2B-compatible deployment',
-        docker: '이 WeKnora 호스트의 Docker에서 세션마다 장수명 컨테이너를 유지합니다. 스크립트와 파일이 같은 컨테이너에 남습니다',
+        docker: '이 ChangePilot 호스트의 Docker에서 세션마다 장수명 컨테이너를 유지합니다. 스크립트와 파일이 같은 컨테이너에 남습니다',
       },
       dockerDisabledAlert: '이 배포에서는 Docker 샌드박스가 켜져 있지 않습니다',
       dockerDisabledHint: '로컬 docker.sock은 호스트 root와 같습니다. 단일 머신 프라이빗 설치에서는 시스템 관리자가 설정 → 시스템 설정 → 네트워크 보안에서 켤 수 있습니다.',
       dockerDisabledCard: '이 배포에서 Docker 샌드박스가 꺼져 있어 이 구성은 컨테이너를 만들지 않습니다',
-      dockerHostRisk: '비우거나 unix:// 를 쓰면 WeKnora가 있는 머신의 Docker 데몬을 사용하며, 그 권한은 해당 머신의 root와 같습니다. 프라이빗 단일 노드에만 쓰세요. 여러 워크스페이스가 같은 호스트를 쓰는 경우에는 Cube 또는 E2B를 쓰세요. 원격 tcp:// 는 TLS 인증서 디렉터리가 필요합니다.',
+      dockerHostRisk: '비우거나 unix:// 를 쓰면 ChangePilot가 있는 머신의 Docker 데몬을 사용하며, 그 권한은 해당 머신의 root와 같습니다. 프라이빗 단일 노드에만 쓰세요. 여러 워크스페이스가 같은 호스트를 쓰는 경우에는 Cube 또는 E2B를 쓰세요. 원격 tcp:// 는 TLS 인증서 디렉터리가 필요합니다.',
       addConfig: '샌드박스 추가',
       viewClusterGuide: 'Cluster setup guide',
       configName: 'Config name',
@@ -6691,9 +6693,9 @@ export default {
       dockerHost: 'Docker daemon endpoint',
       dockerHostHelp: 'Empty follows the local docker CLI (DOCKER_HOST or the current docker context), so you do not have to type /var/run/docker.sock. For a remote daemon use tcp://host:2376, fill in the TLS certificate directory, and turn on "allow private endpoints" for RFC1918 addresses.',
       dockerTlsCertPath: 'TLS certificate directory',
-      dockerTlsCertPathHelp: 'Directory on the WeKnora host holding ca.pem, cert.pem and key.pem. Required for a remote daemon; certificates are mounted by the deployment, never stored here.',
+      dockerTlsCertPathHelp: 'Directory on the ChangePilot host holding ca.pem, cert.pem and key.pem. Required for a remote daemon; certificates are mounted by the deployment, never stored here.',
       dockerIdleTtl: 'Idle reclaim (seconds)',
-      dockerIdleTtlHelp: 'The Docker daemon has no idle timeout of its own. A container that runs no command for this long is reclaimed by WeKnora and rebuilt when the session continues. Empty means 1800 seconds.',
+      dockerIdleTtlHelp: 'The Docker daemon has no idle timeout of its own. A container that runs no command for this long is reclaimed by ChangePilot and rebuilt when the session continues. Empty means 1800 seconds.',
       dockerCpuLimit: 'CPU cores',
       dockerCpuLimitHelp: 'CPU cores available to one sandbox; 0 uses the built-in default.',
       dockerMemoryLimit: 'Memory limit (MB)',
@@ -8301,10 +8303,10 @@ export default {
       },
       knowledge: {
         title: '지식 베이스 만들기',
-        desc: '모든 것의 시작점입니다. 문서, 웹페이지, FAQ를 업로드하면 WeKnora가 자동으로 분석하고 색인합니다. 여기를 클릭해 지식 베이스로 이동하세요.'
+        desc: '모든 것의 시작점입니다. 문서, 웹페이지, FAQ를 업로드하면 ChangePilot가 자동으로 분석하고 색인합니다. 여기를 클릭해 지식 베이스로 이동하세요.'
       },
       welcome: {
-        title: 'WeKnora에 오신 것을 환영합니다',
+        title: 'ChangePilot에 오신 것을 환영합니다',
         desc: '몇 단계만으로 지식 베이스, 대화, 에이전트의 핵심 사용법을 안내합니다. \'다음\'을 눌러 시작하세요.'
       }
     }

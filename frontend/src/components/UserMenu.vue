@@ -204,6 +204,7 @@ import { useAuthStore } from '@/stores/auth'
 import { MessagePlugin } from 'tdesign-vue-next'
 import { logout as logoutApi } from '@/api/auth'
 import { useI18n } from 'vue-i18n'
+import { product } from '@/config/branding'
 import CreateTenantDialog from '@/components/CreateTenantDialog.vue'
 import {
   navigateAfterTenantSwitch,
@@ -215,7 +216,6 @@ import { useRoleLabel, useHomeTenant } from '@/composables/useRoleLabel'
 import { getRootZoom, rectToCssPx, cssViewportSize } from '@/utils/zoom'
 import { openNewUserGuide } from '@/config/contextualGuides'
 import { SETTINGS_MANAGEMENT_SHORTCUT_MIN_ROLE } from '@/config/settingsAccess'
-import { docsUrl } from '@/utils/docsUrl'
 const { t } = useI18n()
 
 const router = useRouter()
@@ -495,13 +495,13 @@ const reopenGuide = () => {
 
 const openDocs = () => {
   menuVisible.value = false
-  window.open(docsUrl('home'), '_blank')
+  window.open(product.documentationURL, '_blank', 'noopener,noreferrer')
 }
 
 // 打开 GitHub
 const openGithub = () => {
   menuVisible.value = false
-  window.open('https://github.com/Tencent/WeKnora', '_blank')
+  window.open(product.repositoryURL, '_blank', 'noopener,noreferrer')
 }
 
 // 注销
